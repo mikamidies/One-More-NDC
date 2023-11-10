@@ -48,6 +48,16 @@
   --black: #0f0f0f;
 }
 
+::-webkit-scrollbar {
+  width: 0.44rem;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a44fe6;
+  border-radius: 2px;
+}
+
 h1,
 h2,
 h3,
@@ -73,6 +83,7 @@ h4,
 h5 {
   font-size: inherit;
   font-weight: inherit;
+  color: unset;
 }
 
 img {
@@ -84,6 +95,20 @@ body {
   background: var(--black);
   font-family: var(--regular);
   color: white;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  background: transparent;
+  border: none;
+}
+input:focus {
+  outline: none;
 }
 
 .container {

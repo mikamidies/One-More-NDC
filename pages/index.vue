@@ -1,6 +1,9 @@
 <template>
   <div class="master">
     <DesktopNavbar />
+    <HomeHero />
+    <HomeTeam />
+    <HomeOffer />
   </div>
 </template>
 
