@@ -4,6 +4,9 @@
     <HomeHero />
     <HomeTeam />
     <HomeOffer />
+    <HomeWhy />
+    <HomeProjects />
+    <HomePartners />
   </div>
 </template>
 

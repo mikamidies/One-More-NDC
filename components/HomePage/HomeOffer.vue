@@ -242,7 +242,7 @@ export default {};
 }
 .title {
   color: var(--White, #fff);
-  font-family: var(--decor-rg);
+  font-family: var(--decor-bd);
   margin-bottom: 16px;
   font-size: 16px;
   font-style: normal;
