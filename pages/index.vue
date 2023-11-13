@@ -1,6 +1,7 @@
 <template>
   <div class="master">
     <DesktopNavbar class="desktop" />
+    <MobileNavbar class="mobile" />
     <HomeHero />
     <HomeTeam />
     <HomeOffer />
@@ -16,9 +17,15 @@ export default {};
 </script>
 
 <style scoped>
+.mobile {
+  display: none;
+}
 @media screen and (max-width: 1200px) {
   .desktop {
     display: none;
+  }
+  .mobile {
+    display: block;
   }
 }
 </style>

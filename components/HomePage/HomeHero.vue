@@ -335,6 +335,7 @@ form .flexer {
     height: 100%;
   }
   .wrap {
+    margin-top: 40px;
     padding: 0 0 40px 0;
     height: 95vh;
     position: relative;
@@ -369,6 +370,25 @@ form .flexer {
     font-style: italic;
     font-weight: 400;
     line-height: 150%; /* 27px */
+  }
+  .input {
+    width: 100%;
+    border-radius: 9px;
+    background: #fff;
+    color: black;
+  }
+
+  .input input:focus,
+  .input input:active,
+  .input input:focus-visible {
+    color: black;
+  }
+  .input span {
+    color: black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 133.333% */
   }
 }
 </style>

@@ -103,7 +103,7 @@
         </div>
         <div class="right">
           <a href="tel:+998 97 666 66 66"> +998 97 666 66 66 </a>
-          <button>
+          <button @click="modalHandle = !modalHandle">
             Заказать званок
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -125,14 +125,51 @@
         </div>
       </div>
     </div>
+
+    <ApplicationModal
+      class="modaller"
+      :class="{ open: modalHandle }"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      modalHandle: false,
+    };
+  },
+
+  methods: {
+    closeModal() {
+      this.modalHandle = false;
+    },
+  },
+
+  watch: {
+    modalHandle(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
+.modaller.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  z-index: 99;
+  transform: translateY(0);
+}
 .wrap {
   padding-bottom: 80px;
 }

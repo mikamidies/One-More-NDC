@@ -1,8 +1,8 @@
 <template>
   <div class="wrap">
-    <div class="space"></div>
+    <div class="space" @click="$emit('closeModal')"></div>
     <div class="body">
-      <div class="x">
+      <div @click="$emit('closeModal')" class="x">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -25,6 +25,15 @@
         <p class="sub">
           Оставьте Ваши контактные данные и наши менеджеры свяжутся с вами
         </p>
+        <div class="person">
+          <div class="img">
+            <img src="@/assets/img/person-1.jpg" alt="" />
+          </div>
+          <div class="block">
+            <p class="name">Акмал Икромов</p>
+            <p class="status">Менежер</p>
+          </div>
+        </div>
       </div>
       <div class="right">
         <form>
@@ -40,6 +49,7 @@
             </div>
             <input type="text" class="second input" placeholder="Ваше имя" />
           </div>
+          <p class="hint">Перезвоним за 3 минуты</p>
           <div class="flex">
             <div class="manager">
               <div class="img">
@@ -66,7 +76,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      myInputModel: "",
+    };
+  },
+
+  methods: {},
+};
 </script>
 
 <style scoped>
@@ -76,12 +94,23 @@ export default {};
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4) !important;
   z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+.space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .body {
   border-radius: 24px;
@@ -189,12 +218,14 @@ form .flexer {
   justify-content: space-between;
   margin-top: 22px;
 }
-.manager {
+.manager,
+.person {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.manager img {
+.manager img,
+.person img {
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -229,5 +260,113 @@ form .flexer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.person {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    align-items: flex-end;
+    padding-bottom: 0 !important;
+  }
+
+  .body {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: unset;
+    border-radius: 16px 16px 0px 0px;
+    background: #1b1b1b;
+    padding: 24px 16px;
+    width: 100%;
+    transition: 0.4s;
+    transform: translateY(100%);
+  }
+  .wrap.open .body {
+    transform: translateY(0);
+  }
+  .flex,
+  .flexer {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+  .sub {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 16px;
+  }
+  .manager {
+    display: none;
+  }
+  .person {
+    display: flex;
+    border-radius: 10px;
+    background: #000;
+    padding: 10px;
+  }
+  .person img {
+    width: 82px;
+    height: 82px;
+  }
+  .name {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .status {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .input {
+    width: 100%;
+    border-radius: 9px;
+    background: #fff;
+    color: black;
+  }
+
+  .input input:focus,
+  .input input:active,
+  .input input:focus-visible {
+    color: black;
+  }
+  .input span {
+    color: black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 133.333% */
+  }
+  .hint {
+    color: var(--White, #fff);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 120px;
+    margin-top: 12px;
+  }
+  .flex {
+    align-items: flex-start;
+  }
+  .button {
+    width: 100%;
+    max-width: unset;
+  }
+  .button span,
+  .button img {
+    width: 500px;
+  }
 }
 </style>

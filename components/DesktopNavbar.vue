@@ -49,7 +49,7 @@
           </ul>
         </div>
         <div class="right">
-          <div type="button" class="button">
+          <div @click="modalHandle = !modalHandle" type="button" class="button">
             <span>
               <img src="@/assets/gif/square.gif" alt="" />
             </span>
@@ -61,15 +61,53 @@
       </div>
     </div>
 
-    <ApplicationModal />
+    <ApplicationModal
+      class="modaller"
+      :class="{ open: modalHandle }"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+import tree from "ant-design-vue/lib/tree";
+
+export default {
+  data() {
+    return {
+      modalHandle: false,
+    };
+  },
+
+  methods: {
+    closeModal() {
+      this.modalHandle = false;
+    },
+  },
+
+  watch: {
+    modalHandle(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
+.modaller.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  z-index: 99;
+  transform: translateY(0);
+}
+
 .wrap {
   background: black;
 }
