@@ -123,7 +123,7 @@
                 <p>Узнать стоимость</p>
               </button>
             </div>
-            <button class="include">
+            <button @click="modalHandle = !modalHandle" class="include">
               В разработку входит
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -230,10 +230,10 @@
       </div>
     </div>
 
-    <div class="modaller">
-      <div class="space"></div>
+    <div :class="{ open: modalHandle }" class="modaller">
+      <div @click="modalHandle = false" class="space"></div>
       <div class="body">
-        <div class="x">
+        <div class="x" @click="modalHandle = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -536,7 +536,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      modalHandle: false,
+    };
+  },
+
+  watch: {
+    modalHandle(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -738,18 +756,35 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--black);
   z-index: 99;
   padding: 80px 0;
   overflow: auto;
   display: flex;
   justify-content: center;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  transition: 0.4s;
+}
+.space {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modaller.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  /* z-index: 1000; */
 }
 .body {
   border-radius: 24px;
   border: 1px solid var(--Grey, #525252);
-  background: #1b1b1b;
+  background: var(--black);
   box-shadow: 0px 40px 51.5px 0px rgba(0, 0, 0, 0.25);
   padding: 80px;
   max-width: 80%;
@@ -973,6 +1008,115 @@ li {
   }
   .order {
     width: 100%;
+  }
+  .modaller {
+    padding: 0;
+  }
+  .body {
+    max-width: 100%;
+    border: 0;
+    padding: 120px 16px 56px 16px;
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: 0.4s;
+  }
+  .modaller.open .body {
+    transform: translateY(0);
+  }
+  .modaller .top {
+    display: flex !important;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding-bottom: 0px;
+    border-bottom: 0;
+  }
+  .x {
+    top: 48px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) scale(1.5);
+  }
+  .pic {
+    height: 220px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .right {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .modaller .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .modaller .sub {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 32px;
+  }
+  .includes {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
+  .par {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2px;
+    margin: 0 -16px;
+  }
+
+  .cardo {
+    border-radius: 16px;
+    background: #1b1b1b;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 10px;
+  }
+  .cardo h4 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+  }
+  .cardo p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .red {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+    margin: 24px -16px 0 -16px;
+    border-radius: 16px;
+    padding: 24px 32px;
+  }
+  .red h4 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .red button {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>
