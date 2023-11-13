@@ -60,6 +60,8 @@
         </div>
       </div>
     </div>
+
+    <ApplicationModal />
   </div>
 </template>
 

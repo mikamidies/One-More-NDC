@@ -229,6 +229,309 @@
         </div>
       </div>
     </div>
+
+    <div class="modaller">
+      <div class="space"></div>
+      <div class="body">
+        <div class="x">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M4.44482 4.43066L11.5555 11.54M4.44482 11.54L11.5555 4.43066"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="top">
+          <div class="left">
+            <h4 class="title">Создание бизнес сайтов</h4>
+            <p class="sub">
+              Поможет привлечь новых клиентов, поддержать лояльность и улучшить
+              коммуникацию.
+            </p>
+            <div class="button">
+              <span>
+                <img src="@/assets/gif/square.gif" alt="" />
+              </span>
+              <button type="button" class="application">
+                <p>Заказать проект</p>
+              </button>
+            </div>
+          </div>
+          <div class="right">
+            <img src="@/assets/img/project-1.jpg" alt="" class="pic" />
+          </div>
+        </div>
+        <div class="mid">
+          <h4 class="par">В услугу включено:</h4>
+          <div class="includes">
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>Индивидуальный дизайн</p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <h4 class="par">В услугу включено:</h4>
+          <div class="cards">
+            <div class="cardo">
+              <h4>Привлечение новых клиентов</h4>
+              <p>
+                Если кто-то заинтересуется вашей компанией, то наверняка
+                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
+                найдет страницу, получит нужную информацию и продолжит свой
+                клиентский путь. Но если никаких официальных данных о вас нет,
+                то он уйдет к конкурентам.
+              </p>
+            </div>
+            <div class="cardo">
+              <h4>Привлечение новых клиентов</h4>
+              <p>
+                Если кто-то заинтересуется вашей компанией, то наверняка
+                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
+                найдет страницу, получит нужную информацию и продолжит свой
+                клиентский путь. Но если никаких официальных данных о вас нет,
+                то он уйдет к конкурентам.
+              </p>
+            </div>
+            <div class="cardo">
+              <h4>Привлечение новых клиентов</h4>
+              <p>
+                Если кто-то заинтересуется вашей компанией, то наверняка
+                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
+                найдет страницу, получит нужную информацию и продолжит свой
+                клиентский путь. Но если никаких официальных данных о вас нет,
+                то он уйдет к конкурентам.
+              </p>
+            </div>
+            <div class="cardo">
+              <h4>Привлечение новых клиентов</h4>
+              <p>
+                Если кто-то заинтересуется вашей компанией, то наверняка
+                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
+                найдет страницу, получит нужную информацию и продолжит свой
+                клиентский путь. Но если никаких официальных данных о вас нет,
+                то он уйдет к конкурентам.
+              </p>
+            </div>
+          </div>
+          <div class="red">
+            <h4>Бесплатно получите анализ: зачем нужен Вашему бизнесу сайт</h4>
+            <button>
+              Заказать званок
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M13.1641 8.05304L17.1111 12L13.1641 15.947M7.91306 12H17.0991M21.8341 12C21.8341 17.1556 17.6546 21.335 12.4991 21.335C7.34348 21.335 3.16406 17.1556 3.16406 12C3.16406 6.84446 7.34348 2.66504 12.4991 2.66504C17.6546 2.66504 21.8341 6.84446 21.8341 12Z"
+                  stroke="white"
+                  stroke-width="1.2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -428,6 +731,162 @@ li {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+.modaller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  padding: 80px 0;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.body {
+  border-radius: 24px;
+  border: 1px solid var(--Grey, #525252);
+  background: #1b1b1b;
+  box-shadow: 0px 40px 51.5px 0px rgba(0, 0, 0, 0.25);
+  padding: 80px;
+  max-width: 80%;
+  height: max-content;
+  position: relative;
+}
+.pic {
+  width: 100%;
+  height: 415px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.modaller .title {
+  color: var(--White, #fff);
+  font-family: var(--decor-bd);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 48px */
+  margin-bottom: 8px;
+  max-width: 400px;
+}
+.modaller .sub {
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  margin-bottom: 40px;
+  max-width: 450px;
+}
+.modaller .top {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  align-items: center;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--Grey, #525252);
+}
+.includes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.par {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: var(--decor-bd);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  margin-bottom: 24px;
+}
+.mid {
+  padding: 40px 0;
+}
+.inc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.inc p {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cardo {
+  border-radius: 30px;
+  background: var(--Black, #0f0f0f);
+  padding: 24px;
+}
+.cardo h4 {
+  color: var(--White, #fff);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.cardo p {
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.red {
+  border-radius: 30px;
+  background: #d84471;
+  padding: 36px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.red h4 {
+  color: var(--White, #fff);
+  font-family: var(--decor-bd);
+  max-width: 453px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.red button {
+  border-radius: 16px;
+  border: 1px solid var(--White, #fff);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+}
+.x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #303030;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
   .container {
