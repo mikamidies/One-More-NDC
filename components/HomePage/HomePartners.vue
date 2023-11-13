@@ -132,20 +132,32 @@ import "swiper/swiper-bundle.min.css";
 export default {
   mounted() {
     const swiper1 = new Swiper(this.$refs.swiper1, {
-      slidesPerView: 6,
+      slidesPerView: 3,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
+      breakpoints: {
+        1024: {
+          slidesPerView: 6,
+          disableOnInteraction: false,
+        },
+      },
+    });
+    const swiper2 = new Swiper(this.$refs.swiper2, {
+      slidesPerView: 3,
       loop: true,
       autoplay: {
         delay: 2000,
       },
       speed: 1000,
-    });
-    const swiper2 = new Swiper(this.$refs.swiper2, {
-      slidesPerView: 6,
-      loop: true,
-      autoplay: {
-        delay: 2000,
+      breakpoints: {
+        1024: {
+          slidesPerView: 6,
+        },
       },
-      speed: 900,
     });
 
     swiper1.controller.control = swiper2;
@@ -279,5 +291,20 @@ export default {
 }
 .swiper1 {
   margin-bottom: 32px;
+}
+.pic {
+  height: 40px;
+  object-fit: contain;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .home__button {
+    display: none;
+  }
 }
 </style>

@@ -66,6 +66,37 @@
       <div class="red">
         <div class="left">
           <p class="par">Свяжитесь с нами - и вы сами увидите!</p>
+          <div class="telega">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="12"
+              viewBox="0 0 15 12"
+              fill="none"
+            >
+              <path
+                d="M14.0075 0C14.4483 0 14.7808 0.386641 14.6029 1.10579L12.4455 11.2745C12.2947 11.9975 11.8578 12.1715 11.2546 11.8351L6.10843 8.0344C6.08847 8.02008 6.07221 8.00121 6.061 7.97936C6.04978 7.95751 6.04393 7.9333 6.04393 7.90874C6.04393 7.88418 6.04978 7.85997 6.061 7.83812C6.07221 7.81627 6.08847 7.7974 6.10843 7.78308L12.0511 2.41651C12.3218 2.17679 11.9931 2.0608 11.6374 2.27732L4.17909 6.98274C4.15647 6.99749 4.13079 7.0069 4.10399 7.01025C4.0772 7.0136 4.04999 7.0108 4.02444 7.00207L0.857845 6.00067C0.154159 5.79575 0.154159 5.31245 1.01637 4.96834L13.6866 0.0811946C13.7871 0.0329886 13.8962 0.00538155 14.0075 0Z"
+                fill="white"
+              />
+            </svg>
+            <p>@ndc_manager</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+            >
+              <path
+                d="M13.6078 6.28711L19.3208 12.0001L13.6078 17.7131M6.00684 12.0001H19.3038"
+                stroke="#EAEAEA"
+                stroke-width="1.2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
           <p class="txt">
             делаем ваш бизнес сильнее с помощью цифровых технологий
           </p>
@@ -212,5 +243,93 @@ export default {};
   display: flex;
   align-items: center;
   gap: 32px;
+}
+.telega {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    margin-bottom: 24px;
+  }
+  .container {
+    padding: 0;
+  }
+  .item {
+    padding: 16px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    position: relative;
+  }
+  .name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+  }
+  .sub {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .name span {
+    color: #00ffd1;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%;
+    font-style: italic;
+  }
+  .telegram {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    padding: 8px 16px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+  .item:last-child {
+    padding-bottom: 80px;
+  }
+  .red {
+    flex-direction: column;
+    padding: 16px 32px;
+    text-align: center;
+    gap: 30px;
+  }
+  .txt,
+  .right a {
+    display: none;
+  }
+  .telega {
+    display: inline-flex;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    gap: 4px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .par {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
 }
 </style>

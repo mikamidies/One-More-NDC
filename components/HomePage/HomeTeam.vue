@@ -167,4 +167,65 @@ export default {};
   overflow: hidden;
   margin-left: -12px;
 }
+@media screen and (max-width: 1200px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .wrap {
+    padding: 40px 0;
+    border-radius: 24px;
+  }
+  .sup {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 38.4px */
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .num {
+    color: #9735ff;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .items {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .humans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .person img {
+    width: 60px;
+    height: 60px;
+  }
+  .person:nth-child(13),
+  .person:nth-child(14) {
+    display: none;
+  }
+}
 </style>

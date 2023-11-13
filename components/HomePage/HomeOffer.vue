@@ -429,4 +429,91 @@ li {
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0;
+  }
+  .big {
+    padding: 16px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+    border-radius: 24px;
+  }
+  .project {
+    height: 220px;
+  }
+  .title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .tag {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 16px;
+  }
+  .name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .button {
+    width: 100%;
+    max-width: 100%;
+  }
+  .button img,
+  .button span {
+    width: 400px;
+  }
+  .include {
+    width: 100%;
+    justify-content: center;
+  }
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 8px;
+    gap: 8px;
+  }
+  .item {
+    padding: 24px 16px;
+    border-radius: 24px;
+  }
+  .item .tag {
+    margin-bottom: 8px;
+  }
+  .item .name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .item .sub {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 16px;
+  }
+  .order {
+    width: 100%;
+  }
+}
 </style>

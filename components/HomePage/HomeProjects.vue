@@ -212,4 +212,68 @@ export default {};
   font-weight: 400;
   line-height: normal;
 }
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title {
+    font-size: 40px;
+    font-style: normal;
+    line-height: 120%;
+    max-width: 70%;
+  }
+  .tags {
+    display: none;
+  }
+  .left {
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .right {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 36px;
+  }
+  .header {
+    margin-bottom: 48px;
+    padding: 0 16px;
+  }
+  .container {
+    padding: 0;
+  }
+  .pic {
+    height: 264px;
+    border-radius: 16px;
+  }
+  .top,
+  .sub {
+    padding: 0 20px;
+  }
+  .name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .link {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    gap: 8px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
 </style>

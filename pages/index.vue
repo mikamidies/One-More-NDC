@@ -1,12 +1,13 @@
 <template>
   <div class="master">
-    <DesktopNavbar />
+    <DesktopNavbar class="desktop" />
     <HomeHero />
     <HomeTeam />
     <HomeOffer />
     <HomeWhy />
     <HomeProjects />
     <HomePartners />
+    <DesktopFooter />
   </div>
 </template>
 
@@ -14,4 +15,10 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+@media screen and (max-width: 1200px) {
+  .desktop {
+    display: none;
+  }
+}
+</style>

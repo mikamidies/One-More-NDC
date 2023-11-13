@@ -3,8 +3,11 @@
     <div class="container">
       <div class="top">
         <div class="content">
+          <div class="risk"></div>
           <div>
-            <h1 class="title">Разработка сайта с продающим wow-эффектом</h1>
+            <h1 class="title">
+              Разработка сайта <span>с продающим wow-эффектом</span>
+            </h1>
             <p class="sub">
               делаем ваш бизнес сильнее с помощью цифровых решений
             </p>
@@ -280,5 +283,92 @@ form .flexer {
 }
 .blend {
   mix-blend-mode: color-burn;
+}
+.risk {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 120%; /* 56.4px */
+    text-transform: uppercase;
+  }
+  .title span {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    display: flex;
+    max-width: 79%;
+  }
+  .sub {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .bottom {
+    display: none;
+  }
+  .back {
+    display: none;
+  }
+  .square {
+    width: 270px;
+    height: 270px;
+  }
+  .square img {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+  .gifs {
+    transform: translateY(-30%);
+    right: 8px;
+  }
+  .content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .wrap {
+    padding: 0 0 40px 0;
+    height: 95vh;
+    position: relative;
+  }
+  .top {
+    height: 100%;
+  }
+  .risk {
+    display: block;
+  }
+  .flexer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .input {
+    width: 100%;
+  }
+  .button {
+    max-width: 100%;
+    width: 100%;
+  }
+  .button span,
+  .button img {
+    width: 400px;
+  }
+  .hint {
+    padding: 0;
+    text-align: center;
+    color: var(--Grey, #525252);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
 }
 </style>
