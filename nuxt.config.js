@@ -25,7 +25,7 @@ export default {
   modules: ["@nuxtjs/axios"],
 
   axios: {
-    baseURL: "/",
+    baseURL: "https://ndcapi.pythonanywhere.com/api",
   },
 
   build: {

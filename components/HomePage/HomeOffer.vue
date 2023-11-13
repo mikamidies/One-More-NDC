@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="offers">
     <div class="container">
       <h4 class="title">Что мы предлогаем</h4>
       <div class="big">
@@ -96,7 +96,7 @@
               Домен и хостинг на 1 год
             </li>
           </ul>
-          <button class="all">
+          <button @click="modalHandle = !modalHandle" class="all">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -115,7 +115,7 @@
             Просмотреть вес список
           </button>
           <div class="buttons">
-            <div class="button">
+            <div @click="appHandle = !appHandle" class="button">
               <span>
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
@@ -173,7 +173,9 @@
             Современный интернет-магазин с возможностью оплаты товаров онлайн
           </p>
 
-          <button class="order">Заказать проект</button>
+          <button @click="appHandle = !appHandle" class="order">
+            Заказать проект
+          </button>
         </div>
         <div class="item">
           <p class="tag">
@@ -199,7 +201,9 @@
           <p class="sub">
             Современный интернет-магазин с возможностью оплаты товаров онлайн
           </p>
-          <button class="order">Заказать проект</button>
+          <button @click="appHandle = !appHandle" class="order">
+            Заказать проект
+          </button>
         </div>
         <div class="item">
           <p class="tag">
@@ -225,7 +229,9 @@
           <p class="sub">
             Современный интернет-магазин с возможностью оплаты товаров онлайн
           </p>
-          <button class="order">Заказать проект</button>
+          <button @click="appHandle = !appHandle" class="order">
+            Заказать проект
+          </button>
         </div>
       </div>
     </div>
@@ -532,6 +538,12 @@
         </div>
       </div>
     </div>
+
+    <ApplicationModal
+      class="modaller"
+      :class="{ open: appHandle }"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
@@ -540,11 +552,27 @@ export default {
   data() {
     return {
       modalHandle: false,
+      appHandle: false,
     };
+  },
+
+  methods: {
+    closeModal() {
+      this.appHandle = false;
+    },
   },
 
   watch: {
     modalHandle(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+      }
+    },
+    appHandle(val) {
       if (val) {
         document.body.style.overflow = "hidden";
         document.body.style.height = "100vh";

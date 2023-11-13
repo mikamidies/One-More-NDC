@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="projects">
     <div class="container">
       <div class="header">
         <div class="left">
@@ -21,13 +21,13 @@
         </div>
       </div>
       <div class="items">
-        <div class="item">
+        <div v-for="item in projects" :key="item.id" class="item">
           <div class="img">
-            <img src="@/assets/img/project-1.jpg" alt="" class="pic" />
+            <img :src="item.image" alt="" class="pic" />
           </div>
           <div class="top">
-            <h2 class="name">AirTech</h2>
-            <a href="#" class="link">
+            <h2 class="name">{{ item.title }}</h2>
+            <a :href="item.url" class="link">
               www.airtech.uz
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,63 +47,7 @@
               </svg>
             </a>
           </div>
-          <p class="sub">Платформа для онлайн бронирование</p>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/project-2.jpg" alt="" class="pic" />
-          </div>
-          <div class="top">
-            <h2 class="name">AirTech</h2>
-            <a href="#" class="link">
-              www.airtech.uz
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-              >
-                <path
-                  d="M8.63905 7.79297H16.7191V15.872M7.30505 17.207L16.7071 7.80497"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-          <p class="sub">Платформа для онлайн бронирование</p>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/project-3.jpg" alt="" class="pic" />
-          </div>
-          <div class="top">
-            <h2 class="name">AirTech</h2>
-            <a href="#" class="link">
-              www.airtech.uz
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-              >
-                <path
-                  d="M8.63905 7.79297H16.7191V15.872M7.30505 17.207L16.7071 7.80497"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-          <p class="sub">Платформа для онлайн бронирование</p>
+          <p class="sub">{{ item.subtitle }}</p>
         </div>
       </div>
     </div>
@@ -111,7 +55,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["projects"],
+};
 </script>
 
 <style scoped>

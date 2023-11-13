@@ -49,7 +49,7 @@
       <div class="bottom">
         <ul>
           <li>
-            <button type="button">
+            <NuxtLink to="/#faq" type="button">
               <p>Каким будеть ваш сайт</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +67,10 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+            </NuxtLink>
           </li>
           <li>
-            <button type="button">
+            <NuxtLink to="/#faq" type="button">
               <p>Как мы работаем</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +88,10 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+            </NuxtLink>
           </li>
           <li>
-            <button type="button">
+            <NuxtLink to="/#faq" type="button">
               <p>Как получить скидку</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -262,7 +262,7 @@ form .flexer {
   align-items: center;
   gap: 16px;
 }
-.bottom button {
+.bottom a {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -289,7 +289,7 @@ form .flexer {
 }
 @media screen and (max-width: 1200px) {
   .title {
-    font-size: 47px;
+    font-size: 40px;
     font-weight: 500;
     line-height: 120%; /* 56.4px */
     text-transform: uppercase;
@@ -335,9 +335,8 @@ form .flexer {
     height: 100%;
   }
   .wrap {
-    margin-top: 40px;
     padding: 0 0 40px 0;
-    height: 95vh;
+    height: 90vh;
     position: relative;
   }
   .top {

@@ -33,8 +33,8 @@
         </div>
         <div class="links">
           <ul>
-            <li>
-              <p>Мобильные приложение</p>
+            <li @click="menuHandle = false">
+              <NuxtLink to="/#offers">Мобильные приложение</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -51,8 +51,8 @@
                 />
               </svg>
             </li>
-            <li>
-              <p>Разработка сайтов</p>
+            <li @click="menuHandle = false">
+              <NuxtLink to="/#offers">Разработка сайтов</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -69,8 +69,8 @@
                 />
               </svg>
             </li>
-            <li>
-              <p>Автоматизация бизнеса</p>
+            <li @click="menuHandle = false">
+              <NuxtLink to="/#offers">Автоматизация бизнеса</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -87,8 +87,8 @@
                 />
               </svg>
             </li>
-            <li>
-              <p>Комлекстная упаковка</p>
+            <li @click="menuHandle = false">
+              <NuxtLink to="/#offers">Комлекстная упаковка</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -193,6 +193,8 @@ export default {
     };
   },
 
+  methods: {},
+
   watch: {
     menuHandle(val) {
       if (val) {
@@ -209,9 +211,6 @@ export default {
 
 <style scoped>
 .wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 999;
   padding: 16px 0;
@@ -274,6 +273,8 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
+}
+.links a {
   color: var(--White, #fff);
   font-size: 16px;
   font-style: normal;

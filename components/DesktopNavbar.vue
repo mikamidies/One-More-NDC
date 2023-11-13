@@ -9,8 +9,8 @@
             </NuxtLink>
           </div>
           <div class="right">
-            <NuxtLink class="link" to="/">Агентство</NuxtLink>
-            <NuxtLink class="link" to="/">Работы</NuxtLink>
+            <NuxtLink class="link" to="/#team">Агентство</NuxtLink>
+            <NuxtLink class="link" to="/#projects">Работы</NuxtLink>
             <a href="tel:+998 97 666 66 66" class="tel">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,16 +35,24 @@
         <div class="left">
           <ul>
             <li>
-              <NuxtLink to="/" class="link"> Разработка сайтов </NuxtLink>
+              <NuxtLink to="/#projects" class="link">
+                Разработка сайтов
+              </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="link"> Мобильные приложение </NuxtLink>
+              <NuxtLink to="/#offers" class="link">
+                Мобильные приложение
+              </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="link"> Автоматизация бизнеса </NuxtLink>
+              <NuxtLink to="/#offers" class="link">
+                Автоматизация бизнеса
+              </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="link"> Комлекстная упаковка </NuxtLink>
+              <NuxtLink to="/#offers" class="link">
+                Комлекстная упаковка
+              </NuxtLink>
             </li>
           </ul>
         </div>

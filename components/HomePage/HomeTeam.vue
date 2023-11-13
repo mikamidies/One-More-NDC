@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="team">
     <div class="container">
       <div class="top">
         <div class="left">
@@ -46,47 +46,8 @@
       <div class="bottom">
         <p class="sup">Над вашим проектом будут работать</p>
         <div class="humans">
-          <div class="person">
-            <img src="@/assets/img/special-person-2.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/special-person-1.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/special-person-3.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/special-person-4.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/special-person-5.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/special-person-6.png" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-15.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-16.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-9.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-10.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-11.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-12.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-13.jpg" alt="" />
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-14.jpg" alt="" />
+          <div v-for="item in team" :key="item.id" class="person">
+            <img :src="item.image" alt="" />
           </div>
         </div>
       </div>
@@ -95,7 +56,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["team"],
+};
 </script>
 
 <style scoped>
@@ -111,7 +74,7 @@ export default {};
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 .title {
   color: var(--Black, #0f0f0f);
@@ -155,17 +118,26 @@ export default {};
 .humans {
   display: flex;
   align-items: center;
+  max-height: 98px;
 }
 .person img {
   width: 90px;
   height: 90px;
   object-fit: cover;
+  transition: 0.5s;
 }
 .person {
   border: 4px solid white;
   border-radius: 50%;
   overflow: hidden;
   margin-left: -12px;
+}
+.person:hover img {
+  width: 146px;
+  height: 146px;
+}
+.container {
+  padding: 0 16px;
 }
 @media screen and (max-width: 1200px) {
   .top {
@@ -217,7 +189,12 @@ export default {};
   .humans {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    max-height: max-content;
+    margin-left: 8px;
+  }
+  .person:hover img {
+    width: 60px;
+    height: 60px;
   }
   .person img {
     width: 60px;

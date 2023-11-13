@@ -3,17 +3,34 @@
     <DesktopNavbar class="desktop" />
     <MobileNavbar class="mobile" />
     <HomeHero />
-    <HomeTeam />
+    <HomeTeam :team="team" />
     <HomeOffer />
     <HomeWhy />
-    <HomeProjects />
+    <HomeProjects :projects="projects" />
     <HomePartners />
+    <HomeFaq :faq="faq" />
     <DesktopFooter />
   </div>
 </template>
 
 <script>
-export default {};
+import faqApi from "@/api/faq";
+import teamApi from "@/api/team";
+import projectsApi from "@/api/projects";
+
+export default {
+  async asyncData({ $axios }) {
+    const faq = await faqApi.getFaq($axios);
+    const team = await teamApi.getTeam($axios);
+    const projects = await projectsApi.getProjects($axios);
+
+    return {
+      faq,
+      team,
+      projects,
+    };
+  },
+};
 </script>
 
 <style scoped>
