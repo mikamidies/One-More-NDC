@@ -7,7 +7,6 @@ export default {
         res = await axios.get("/translations", {
           //   ...params,
         });
-        console.log(res);
 
         return res;
       }
