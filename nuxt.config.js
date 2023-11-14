@@ -22,7 +22,7 @@ export default {
 
   buildModules: [],
 
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "vue-toastification/nuxt"],
 
   axios: {
     baseURL: "https://ndcapi.pythonanywhere.com/api",

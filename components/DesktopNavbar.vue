@@ -15,7 +15,7 @@
             <NuxtLink class="link" to="/#projects">{{
               $store.state.translations["main.works"]
             }}</NuxtLink>
-            <a href="tel:+998 97 666 66 66" class="tel">
+            <a :href="`tel:${info.number}`" class="tel">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -28,7 +28,7 @@
                   fill="white"
                 />
               </svg>
-              +998 97 666 66 66</a
+              {{ info.number }}</a
             >
           </div>
         </div>
@@ -82,12 +82,13 @@
 </template>
 
 <script>
-import tree from "ant-design-vue/lib/tree";
+import infoApi from "@/api/info.js";
 
 export default {
   data() {
     return {
       modalHandle: false,
+      info: {},
     };
   },
 
@@ -95,6 +96,12 @@ export default {
     closeModal() {
       this.modalHandle = false;
     },
+  },
+
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
   },
 
   watch: {

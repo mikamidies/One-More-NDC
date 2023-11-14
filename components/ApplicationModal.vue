@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="right">
-        <form>
+        <form @submit.prevent="onSubmit()">
           <div class="flexer">
             <div class="input">
               <span> +998 </span>
@@ -48,10 +48,13 @@
                 type="text"
                 placeholder="(00) 000-00-00"
                 v-mask="'(##) ###-##-##'"
-                v-model="myInputModel"
+                v-model="number"
+                required
               />
             </div>
             <input
+              v-model="full_name"
+              required
               type="text"
               class="second input"
               :placeholder="$store.state.translations[`main.your_name`]"
@@ -76,7 +79,7 @@
               <span>
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
-              <button type="button" class="application">
+              <button type="submit" class="application">
                 <p>{{ $store.state.translations["main.order_project"] }}</p>
               </button>
             </div>
@@ -88,14 +91,38 @@
 </template>
 
 <script>
+import formApi from "@/api/form.js";
+
 export default {
   data() {
     return {
       myInputModel: "",
+      number: "",
+      full_name: "",
     };
   },
 
-  methods: {},
+  methods: {
+    async onSubmit() {
+      const formData = {
+        number: "+998" + this.number,
+        full_name: this.full_name,
+      };
+
+      const res = await formApi.sendApplication(formData);
+
+      if (res && res.status === 201) {
+        this.$toast.success("Successfully sent");
+      } else {
+        this.$toast.error("Error");
+      }
+
+      this.number = "";
+      this.full_name = "";
+
+      this.$emit("closeModal");
+    },
+  },
 };
 </script>
 

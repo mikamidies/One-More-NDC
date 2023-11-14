@@ -113,7 +113,7 @@
           </p>
         </div>
         <div class="right">
-          <a href="tel:+998 97 666 66 66"> +998 97 666 66 66 </a>
+          <a :href="`tel:${info.number}`"> {{ info.number }}</a>
           <button @click="modalHandle = !modalHandle">
             {{ $store.state.translations["services.order_call"] }}
             <svg
@@ -146,10 +146,13 @@
 </template>
 
 <script>
+import infoApi from "@/api/info.js";
+
 export default {
   data() {
     return {
       modalHandle: false,
+      info: {},
     };
   },
 
@@ -157,6 +160,12 @@ export default {
     closeModal() {
       this.modalHandle = false;
     },
+  },
+
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
   },
 
   watch: {

@@ -28,8 +28,6 @@ export default {
     const partners = await partnersApi.getPartners($axios);
     const translations = await translationsApi.getTranslations($axios);
 
-    console.log(translations);
-
     await store.commit("getTranslations", translations.data);
 
     return {

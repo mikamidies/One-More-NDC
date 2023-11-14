@@ -274,7 +274,7 @@
             <p class="sub">
               {{ $store.state.translations["services.modal_sub"] }}
             </p>
-            <div class="button">
+            <div @click="appHandle = !appHandle" class="button">
               <span>
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
@@ -601,7 +601,7 @@
           </div>
           <div class="red">
             <h4>{{ $store.state.translations["services.red-title"] }}</h4>
-            <button>
+            <button @click="appHandle = !appHandle">
               {{ $store.state.translations["services.order_call"] }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

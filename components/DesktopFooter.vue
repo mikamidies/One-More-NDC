@@ -4,11 +4,10 @@
       <div class="container">
         <div class="top">
           <div class="left">
-            <a href="" class="num">+998 97 666 66 66</a>
-            <a href=""> info@ndc.uz </a>
+            <a :href="`tel:${info.number}`" class="num">{{ info.number }}</a>
+            <a :href="`mailto:${info.email}`"> info@ndc.uz </a>
             <p>
-              Uzbekistan, Tashkent <br />
-              Sergeli-6
+              {{ info.address }}
             </p>
           </div>
           <div class="right">
@@ -111,7 +110,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          Массив Джангох, 37, Шайхантахурский район, Ташкент
+          {{ info.address }}
         </p>
       </div>
       <div class="info">
@@ -128,10 +127,13 @@
 </template>
 
 <script>
+import infoApi from "@/api/info.js";
+
 export default {
   data() {
     return {
       modalHandle: false,
+      info: {},
     };
   },
 
@@ -139,6 +141,12 @@ export default {
     closeModal() {
       this.modalHandle = false;
     },
+  },
+
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
   },
 
   watch: {

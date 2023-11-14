@@ -137,11 +137,11 @@
         </div>
 
         <div class="num">
-          <a href="#"> +998 97 666 66 66 </a>
+          <a :href="`tel:${info.number}`"> {{ info.number }} </a>
         </div>
 
         <div class="telega">
-          <a href="#">
+          <a :href="info.telegram">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -200,14 +200,25 @@
 </template>
 
 <script>
+import infoApi from "@/api/info.js";
+
 export default {
   data() {
     return {
+      info: {},
       menuHandle: false,
     };
   },
 
   methods: {},
+
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
+  },
+
+  mounted() {},
 
   watch: {
     menuHandle(val) {
@@ -262,6 +273,7 @@ export default {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
+  display: none;
 }
 .lang button {
   color: var(--White, #fff);
