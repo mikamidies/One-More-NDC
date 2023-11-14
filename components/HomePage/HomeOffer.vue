@@ -1,7 +1,9 @@
 <template>
   <div class="wrap" id="offers">
     <div class="container">
-      <h4 class="title">Что мы предлогаем</h4>
+      <h4 class="title">
+        {{ $store.state.translations["services.we_offer"] }}
+      </h4>
       <div class="big">
         <div class="left">
           <p class="tag">
@@ -21,12 +23,13 @@
                 fill="#A05BFF"
               />
             </svg>
-            Для бизнеса
+            {{ $store.state.translations["services.for_businnes"] }}
           </p>
-          <h4 class="name">Создание бизнес сайтов</h4>
+          <h4 class="name">
+            {{ $store.state.translations["services.businnes_site-dev"] }}
+          </h4>
           <p class="sub">
-            Для формирования имиджа компании в интернете, <br />
-            повышения продаж и доверия к бренду у целевой аудитории.
+            {{ $store.state.translations["services.businnes_site-sub"] }}
           </p>
           <ul>
             <li>
@@ -39,7 +42,7 @@
               >
                 <path d="M2 8.5404L7.27304 14.5L16 4.5" stroke="white" />
               </svg>
-              Индивидуальный дизайн
+              {{ $store.state.translations["services.exclusive_design"] }}
             </li>
             <li>
               <svg
@@ -51,7 +54,7 @@
               >
                 <path d="M2 8.5404L7.27304 14.5L16 4.5" stroke="white" />
               </svg>
-              Мобильная версия сайта
+              {{ $store.state.translations["services.mobile_responsive"] }}
             </li>
             <li>
               <svg
@@ -63,7 +66,7 @@
               >
                 <path d="M2 8.5404L7.27304 14.5L16 4.5" stroke="white" />
               </svg>
-              Составление технического задания
+              {{ $store.state.translations["services.tech_task"] }}
             </li>
             <li>
               <svg
@@ -75,7 +78,7 @@
               >
                 <path d="M2 8.5404L7.27304 14.5L16 4.5" stroke="white" />
               </svg>
-              Наполнение контента
+              {{ $store.state.translations["services.fill_content"] }}
             </li>
             <li>
               <svg
@@ -93,7 +96,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              Домен и хостинг на 1 год
+              {{ $store.state.translations["services.domain_hosting"] }}
             </li>
           </ul>
           <button @click="modalHandle = !modalHandle" class="all">
@@ -112,7 +115,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            Просмотреть вес список
+            {{ $store.state.translations["services.see_all"] }}
           </button>
           <div class="buttons">
             <div @click="appHandle = !appHandle" class="button">
@@ -120,11 +123,11 @@
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
               <button type="button" class="application">
-                <p>Узнать стоимость</p>
+                <p>{{ $store.state.translations["services.what_price"] }}</p>
               </button>
             </div>
             <button @click="modalHandle = !modalHandle" class="include">
-              В разработку входит
+              {{ $store.state.translations["services.dev_includes"] }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -166,15 +169,17 @@
                 fill="#A05BFF"
               />
             </svg>
-            Разработка
+            {{ $store.state.translations["services.development_of"] }}
           </p>
-          <h4 class="name">Интернет магазины</h4>
+          <h4 class="name">
+            {{ $store.state.translations["services.e-shop"] }}
+          </h4>
           <p class="sub">
-            Современный интернет-магазин с возможностью оплаты товаров онлайн
+            {{ $store.state.translations["services.e-shop_sub"] }}
           </p>
 
           <button @click="appHandle = !appHandle" class="order">
-            Заказать проект
+            {{ $store.state.translations["services.order_project"] }}
           </button>
         </div>
         <div class="item">
@@ -195,14 +200,16 @@
                 fill="#A05BFF"
               />
             </svg>
-            Разработка
+            {{ $store.state.translations["services.development_of"] }}
           </p>
-          <h4 class="name">Автоматизация бизнеса</h4>
+          <h4 class="name">
+            {{ $store.state.translations["services.businnes_automata"] }}
+          </h4>
           <p class="sub">
-            Современный интернет-магазин с возможностью оплаты товаров онлайн
+            {{ $store.state.translations["services.businnes_automata-sub"] }}
           </p>
           <button @click="appHandle = !appHandle" class="order">
-            Заказать проект
+            {{ $store.state.translations["services.order_project"] }}
           </button>
         </div>
         <div class="item">
@@ -223,14 +230,16 @@
                 fill="#A05BFF"
               />
             </svg>
-            Разработка
+            {{ $store.state.translations["services.development_of"] }}
           </p>
-          <h4 class="name">Мобильные приложения</h4>
+          <h4 class="name">
+            {{ $store.state.translations["services.mobile-app"] }}
+          </h4>
           <p class="sub">
-            Современный интернет-магазин с возможностью оплаты товаров онлайн
+            {{ $store.state.translations["services.mobile-app_sub"] }}
           </p>
           <button @click="appHandle = !appHandle" class="order">
-            Заказать проект
+            {{ $store.state.translations["services.order_project"] }}
           </button>
         </div>
       </div>
@@ -259,17 +268,18 @@
         </div>
         <div class="top">
           <div class="left">
-            <h4 class="title">Создание бизнес сайтов</h4>
+            <h4 class="title">
+              {{ $store.state.translations["services.businnes_site-dev"] }}
+            </h4>
             <p class="sub">
-              Поможет привлечь новых клиентов, поддержать лояльность и улучшить
-              коммуникацию.
+              {{ $store.state.translations["services.modal_sub"] }}
             </p>
             <div class="button">
               <span>
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
               <button type="button" class="application">
-                <p>Заказать проект</p>
+                <p>{{ $store.state.translations["services.what_price"] }}</p>
               </button>
             </div>
           </div>
@@ -278,7 +288,9 @@
           </div>
         </div>
         <div class="mid">
-          <h4 class="par">В услугу включено:</h4>
+          <h4 class="par">
+            {{ $store.state.translations["services.service_include"] }}
+          </h4>
           <div class="includes">
             <div class="inc">
               <svg
@@ -295,7 +307,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>
+                {{ $store.state.translations["services.exclusive_design"] }}
+              </p>
             </div>
             <div class="inc">
               <svg
@@ -312,7 +326,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.optimization"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -329,7 +343,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.online_chat"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -346,7 +360,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>
+                {{ $store.state.translations["services.yandex_google"] }}
+              </p>
             </div>
             <div class="inc">
               <svg
@@ -363,7 +379,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.ssl_cert"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -380,7 +396,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.guide_staff"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -397,7 +413,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.multi_lang"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -414,7 +430,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.telegram_bot"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -431,7 +447,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.google_business"] }}</p>
             </div>
             <div class="inc">
               <svg
@@ -448,7 +464,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>
+                {{ $store.state.translations["services.domain_name"] }}
+              </p>
             </div>
             <div class="inc">
               <svg
@@ -465,58 +483,126 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p>Индивидуальный дизайн</p>
+              <p>{{ $store.state.translations["services.admin_panel"] }}</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>{{ $store.state.translations["services.corpo_mail"] }}</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>{{ $store.state.translations["services.google_anal"] }}</p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>
+                {{ $store.state.translations["services.seo_optimization"] }}
+              </p>
+            </div>
+            <div class="inc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M8 12L10.5347 14.2812C10.9662 14.6696 11.6366 14.6101 11.993 14.1519L16 9M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#A05BFF"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p>{{ $store.state.translations["services.hosting_year"] }}</p>
             </div>
           </div>
         </div>
         <div class="bottom">
-          <h4 class="par">В услугу включено:</h4>
+          <h4 class="par">
+            {{ $store.state.translations["services.why_need"] }}
+          </h4>
           <div class="cards">
             <div class="cardo">
-              <h4>Привлечение новых клиентов</h4>
+              <h4>{{ $store.state.translations["services.cardo_title-1"] }}</h4>
               <p>
-                Если кто-то заинтересуется вашей компанией, то наверняка
-                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
-                найдет страницу, получит нужную информацию и продолжит свой
-                клиентский путь. Но если никаких официальных данных о вас нет,
-                то он уйдет к конкурентам.
+                {{ $store.state.translations["services.cardo_txt-1"] }}
               </p>
             </div>
             <div class="cardo">
-              <h4>Привлечение новых клиентов</h4>
+              <h4>{{ $store.state.translations["services.cardo_title-2"] }}</h4>
               <p>
-                Если кто-то заинтересуется вашей компанией, то наверняка
-                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
-                найдет страницу, получит нужную информацию и продолжит свой
-                клиентский путь. Но если никаких официальных данных о вас нет,
-                то он уйдет к конкурентам.
+                {{ $store.state.translations["services.cardo_txt-2"] }}
               </p>
             </div>
             <div class="cardo">
-              <h4>Привлечение новых клиентов</h4>
+              <h4>{{ $store.state.translations["services.cardo_title-3"] }}</h4>
               <p>
-                Если кто-то заинтересуется вашей компанией, то наверняка
-                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
-                найдет страницу, получит нужную информацию и продолжит свой
-                клиентский путь. Но если никаких официальных данных о вас нет,
-                то он уйдет к конкурентам.
+                {{ $store.state.translations["services.cardo_txt-3"] }}
               </p>
             </div>
             <div class="cardo">
-              <h4>Привлечение новых клиентов</h4>
+              <h4>{{ $store.state.translations["services.cardo_title-4"] }}</h4>
               <p>
-                Если кто-то заинтересуется вашей компанией, то наверняка
-                попытается найти вас через Гугл или Яндекс. Потенциальный клиент
-                найдет страницу, получит нужную информацию и продолжит свой
-                клиентский путь. Но если никаких официальных данных о вас нет,
-                то он уйдет к конкурентам.
+                {{ $store.state.translations["services.cardo_txt-4"] }}
+              </p>
+            </div>
+            <div class="cardo">
+              <h4>{{ $store.state.translations["services.cardo_title-5"] }}</h4>
+              <p>
+                {{ $store.state.translations["services.cardo_txt-5"] }}
+              </p>
+            </div>
+            <div class="cardo">
+              <h4>{{ $store.state.translations["services.cardo_title-6"] }}</h4>
+              <p>
+                {{ $store.state.translations["services.cardo_txt-6"] }}
               </p>
             </div>
           </div>
           <div class="red">
-            <h4>Бесплатно получите анализ: зачем нужен Вашему бизнесу сайт</h4>
+            <h4>{{ $store.state.translations["services.red-title"] }}</h4>
             <button>
-              Заказать званок
+              {{ $store.state.translations["services.order_call"] }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -784,7 +870,6 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--black);
   z-index: 99;
   padding: 80px 0;
   overflow: auto;
@@ -802,6 +887,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 .modaller.open {
   opacity: 1;
@@ -812,7 +898,7 @@ li {
 .body {
   border-radius: 24px;
   border: 1px solid var(--Grey, #525252);
-  background: var(--black);
+  background: #1b1b1b;
   box-shadow: 0px 40px 51.5px 0px rgba(0, 0, 0, 0.25);
   padding: 80px;
   max-width: 80%;

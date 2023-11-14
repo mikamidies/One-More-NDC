@@ -14,19 +14,23 @@
           <div class="right">
             <ul>
               <li>
-                <a href=""> UX/UI design </a>
+                <a href=""> {{ $store.state.translations["main.ux-ui"] }} </a>
               </li>
               <li>
-                <a href=""> Mobile dev </a>
+                <a href="">
+                  {{ $store.state.translations["main.mobile_development"] }}
+                </a>
               </li>
               <li>
-                <a href=""> Crm cystem </a>
+                <a href="">{{ $store.state.translations["main.crm"] }} </a>
               </li>
               <li>
-                <a href=""> Social Media Marketing </a>
+                <a href=""> {{ $store.state.translations["main.smm"] }} </a>
               </li>
               <li>
-                <a href=""> Branding </a>
+                <a href="">
+                  {{ $store.state.translations["main.branding"] }}
+                </a>
               </li>
             </ul>
           </div>
@@ -36,11 +40,11 @@
 
     <div class="container">
       <div class="bottom">
-        <p>©2022 Все права защищены.</p>
+        <p>{{ $store.state.translations["main.all_rights"] }}</p>
         <div class="socs">
-          <a href="#"> Facebook </a>
-          <a href="#"> Instagram </a>
-          <a href="#"> Telegram </a>
+          <a href="#"> {{ $store.state.translations["main.facebook"] }} </a>
+          <a href="#"> {{ $store.state.translations["main.instagram"] }} </a>
+          <a href="#"> {{ $store.state.translations["main.telegram"] }} </a>
         </div>
       </div>
     </div>
@@ -48,9 +52,9 @@
     <div class="red">
       <div class="container">
         <div class="cardo">
-          <p>Бесплатно получите анализ: зачем нужен Вашему бизнесу сайт</p>
+          <p>{{ $store.state.translations["main.free"] }}</p>
           <button @click="modalHandle = !modalHandle">
-            Заказать званок
+            {{ $store.state.translations["services.order_call"] }}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -69,9 +73,49 @@
             </svg>
           </button>
         </div>
-        <div class="info">
-          <p>©2022 Все права защищены.</p>
+      </div>
+      <div class="map">
+        <div class="iframe">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.0850364179273!2d69.2491543250465!3d41.32876420534111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b324f63d6fd%3A0x726da163a0776972!2sJangoh%2036%20a!5e0!3m2!1sru!2s!4v1699957713031!5m2!1sru!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
+        <p class="address">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M11.9979 21.332C11.9979 21.332 4.23389 16.667 4.23389 10.444C4.23389 6.14802 7.71589 2.66602 12.0119 2.66602C16.3079 2.66602 19.7899 6.14802 19.7899 10.444C19.7899 16.667 11.9979 21.332 11.9979 21.332Z"
+              stroke="#D84471"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12.0119 13.556C13.73 13.556 15.1229 12.1632 15.1229 10.445C15.1229 8.72686 13.73 7.33402 12.0119 7.33402C10.2937 7.33402 8.90089 8.72686 8.90089 10.445C8.90089 12.1632 10.2937 13.556 12.0119 13.556Z"
+              stroke="#D84471"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Массив Джангох, 37, Шайхантахурский район, Ташкент
+        </p>
+      </div>
+      <div class="info">
+        <p>{{ $store.state.translations["main.all_rights"] }}</p>
       </div>
     </div>
 
@@ -187,6 +231,10 @@ export default {
 .red {
   display: none;
 }
+.map {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .top {
     flex-direction: column;
@@ -236,6 +284,52 @@ export default {
     opacity: 0.8;
     text-align: center;
     padding-bottom: 24px;
+  }
+  .map {
+    display: flex;
+    flex-direction: column;
+    background: black;
+  }
+  .info {
+    background: black;
+  }
+  .map iframe {
+    filter: invert(90%);
+    width: 100% !important;
+    height: 467px !important;
+  }
+  .address {
+    color: var(--White, #fff);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 160% */
+    margin: 32px 0;
+  }
+  .iframe {
+    position: relative;
+  }
+  .iframe::before {
+    background: linear-gradient(180deg, #0f0f0f 0%, rgba(10, 10, 10, 0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    content: "";
+    z-index: 99;
+  }
+  .iframe::after {
+    background: linear-gradient(180deg, #010101 0%, rgba(10, 10, 10, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    content: "";
+    z-index: 99;
+    transform: rotate(180deg);
   }
 }
 </style>

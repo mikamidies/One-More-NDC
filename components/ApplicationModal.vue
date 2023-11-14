@@ -21,17 +21,21 @@
         </svg>
       </div>
       <div class="left">
-        <h4 class="title">Оставить заявку</h4>
+        <h4 class="title">{{ $store.state.translations["main.leave_app"] }}</h4>
         <p class="sub">
-          Оставьте Ваши контактные данные и наши менеджеры свяжутся с вами
+          {{ $store.state.translations["main.leave_contacts"] }}
         </p>
         <div class="person">
           <div class="img">
             <img src="@/assets/img/person-1.jpg" alt="" />
           </div>
           <div class="block">
-            <p class="name">Акмал Икромов</p>
-            <p class="status">Менежер</p>
+            <p class="name">
+              {{ $store.state.translations["main.manager_name"] }}
+            </p>
+            <p class="status">
+              {{ $store.state.translations["main.manger"] }}
+            </p>
           </div>
         </div>
       </div>
@@ -47,17 +51,25 @@
                 v-model="myInputModel"
               />
             </div>
-            <input type="text" class="second input" placeholder="Ваше имя" />
+            <input
+              type="text"
+              class="second input"
+              :placeholder="$store.state.translations[`main.your_name`]"
+            />
           </div>
-          <p class="hint">Перезвоним за 3 минуты</p>
+          <p class="hint">{{ $store.state.translations["main.call_back"] }}</p>
           <div class="flex">
             <div class="manager">
               <div class="img">
                 <img src="@/assets/img/person-1.jpg" alt="" />
               </div>
               <div class="block">
-                <p class="name">Акмал Икромов</p>
-                <p class="status">Менежер</p>
+                <p class="name">
+                  {{ $store.state.translations["main.manager_name"] }}
+                </p>
+                <p class="status">
+                  {{ $store.state.translations["main.manager"] }}
+                </p>
               </div>
             </div>
             <div class="button">
@@ -65,7 +77,7 @@
                 <img src="@/assets/gif/square.gif" alt="" />
               </span>
               <button type="button" class="application">
-                <p>Заказать проект</p>
+                <p>{{ $store.state.translations["main.order_project"] }}</p>
               </button>
             </div>
           </div>
@@ -264,6 +276,9 @@ form .flexer {
 .person {
   display: none;
 }
+.hint {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .wrap {
     align-items: flex-end;
@@ -356,6 +371,7 @@ form .flexer {
     line-height: normal;
     margin-bottom: 120px;
     margin-top: 12px;
+    display: flex;
   }
   .flex {
     align-items: flex-start;

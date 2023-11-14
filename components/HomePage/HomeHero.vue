@@ -6,10 +6,11 @@
           <div class="risk"></div>
           <div>
             <h1 class="title">
-              Разработка сайта <span>с продающим wow-эффектом</span>
+              {{ $store.state.translations["main.title"] }}
+              <span>{{ $store.state.translations["main.title_span"] }}</span>
             </h1>
             <p class="sub">
-              делаем ваш бизнес сильнее с помощью цифровых решений
+              {{ $store.state.translations["main.hero-sub"] }}
             </p>
           </div>
           <form>
@@ -28,11 +29,13 @@
                   <img src="@/assets/gif/square.gif" alt="" />
                 </span>
                 <button type="button" class="application">
-                  <p>Заказать проект</p>
+                  <p>{{ $store.state.translations["main.order_project"] }}</p>
                 </button>
               </div>
             </div>
-            <p class="hint">Перезвоним за 3 минуты</p>
+            <p class="hint">
+              {{ $store.state.translations["main.call_back"] }}
+            </p>
           </form>
         </div>
         <div class="gifs">
@@ -50,7 +53,7 @@
         <ul>
           <li>
             <NuxtLink to="/#faq" type="button">
-              <p>Каким будеть ваш сайт</p>
+              <p>{{ $store.state.translations["main.faq_1"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -71,7 +74,7 @@
           </li>
           <li>
             <NuxtLink to="/#faq" type="button">
-              <p>Как мы работаем</p>
+              <p>{{ $store.state.translations["main.faq_2"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -92,7 +95,7 @@
           </li>
           <li>
             <NuxtLink to="/#faq" type="button">
-              <p>Как получить скидку</p>
+              <p>{{ $store.state.translations["main.faq_3"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

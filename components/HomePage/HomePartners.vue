@@ -43,81 +43,29 @@
       </div>
       <div class="swiper swiper1" ref="swiper1">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-1.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-2.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-3.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-4.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-5.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-6.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-1.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-2.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-3.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-4.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-5.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-6.png" alt="" class="pic" />
+          <div v-for="item in firstHalf" :key="item.id" class="swiper-slide">
+            <img
+              :src="item.image"
+              :title="item.name"
+              :alt="item.name"
+              class="pic"
+            />
           </div>
         </div>
       </div>
       <div class="swiper" ref="swiper2">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-1.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-2.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-3.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-4.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-5.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-6.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-1.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-2.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-3.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-4.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-5.png" alt="" class="pic" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/part-6.png" alt="" class="pic" />
+          <div
+            v-for="partner in secondHalf"
+            :key="partner.id"
+            class="swiper-slide"
+          >
+            <img
+              :src="partner.image"
+              :title="partner.name"
+              :alt="partner.name"
+              class="pic"
+            />
           </div>
         </div>
       </div>
@@ -130,7 +78,23 @@ import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
+  props: ["partners"],
+
+  data() {
+    return {
+      firstHalf: "",
+      secondHalf: "",
+    };
+  },
+
   mounted() {
+    const half = Math.ceil(this.partners.length / 2);
+
+    const firstHalf = this.partners.slice(0, half);
+    const secondHalf = this.partners.slice(half);
+
+    (this.firstHalf = firstHalf), (this.secondHalf = secondHalf);
+
     const swiper1 = new Swiper(this.$refs.swiper1, {
       slidesPerView: 3,
       loop: true,

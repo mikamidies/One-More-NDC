@@ -7,7 +7,7 @@
     <HomeOffer />
     <HomeWhy />
     <HomeProjects :projects="projects" />
-    <HomePartners />
+    <HomePartners :partners="partners" />
     <HomeFaq :faq="faq" />
     <DesktopFooter />
   </div>
@@ -17,17 +17,26 @@
 import faqApi from "@/api/faq";
 import teamApi from "@/api/team";
 import projectsApi from "@/api/projects";
+import partnersApi from "@/api/partners";
+import translationsApi from "@/api/translations";
 
 export default {
-  async asyncData({ $axios }) {
+  async asyncData({ $axios, store }) {
     const faq = await faqApi.getFaq($axios);
     const team = await teamApi.getTeam($axios);
     const projects = await projectsApi.getProjects($axios);
+    const partners = await partnersApi.getPartners($axios);
+    const translations = await translationsApi.getTranslations($axios);
+
+    console.log(translations);
+
+    await store.commit("getTranslations", translations.data);
 
     return {
       faq,
       team,
       projects,
+      partners,
     };
   },
 };

@@ -4,11 +4,13 @@
       <div class="header">
         <div class="left">
           <div>
-            <h4 class="title">Наши работы</h4>
+            <h4 class="title">
+              {{ $store.state.translations["main.our_works"] }}
+            </h4>
             <div class="tags">
-              <p>Разработка</p>
-              <p>SEO оптимизация</p>
-              <p>Брендинг</p>
+              <p>{{ $store.state.translations["main.development"] }}</p>
+              <p>{{ $store.state.translations["main.seo"] }}</p>
+              <p>{{ $store.state.translations["main.branding"] }}</p>
             </div>
           </div>
           <div class="brando">
@@ -16,8 +18,8 @@
           </div>
         </div>
         <div class="right">
-          <h4>Бесплатная концепция</h4>
-          <p>делаем ваш бизнес сильнее с помощью цифровых технологий</p>
+          <h4>{{ $store.state.translations["main.free_concept"] }}</h4>
+          <p>{{ $store.state.translations["main.give_birth"] }}</p>
         </div>
       </div>
       <div class="items">
@@ -28,7 +30,7 @@
           <div class="top">
             <h2 class="name">{{ item.title }}</h2>
             <a :href="item.url" class="link">
-              www.airtech.uz
+              {{ `${item.url}`.replace("https://", "") }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -125,7 +127,14 @@ export default {
   width: 100%;
   height: 516px;
   object-fit: cover;
+  transition: 0.4s;
+}
+.img {
+  overflow: hidden;
   margin-bottom: 16px;
+}
+.img:hover .pic {
+  transform: scale(1.1);
 }
 .top {
   display: flex;

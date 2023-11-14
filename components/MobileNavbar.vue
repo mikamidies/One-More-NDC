@@ -28,13 +28,17 @@
     <div class="menu" :class="{ open: menuHandle }">
       <div class="up">
         <div class="lang">
-          <button class="active">Русский</button>
-          <button>O’zbek tili</button>
+          <button class="active">
+            {{ $store.state.translations["main.russian"] }}
+          </button>
+          <button>{{ $store.state.translations["main.uzbek"] }}</button>
         </div>
         <div class="links">
           <ul>
             <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">Мобильные приложение</NuxtLink>
+              <NuxtLink to="/#offers">{{
+                $store.state.translations["main.mobile_development"]
+              }}</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -52,7 +56,9 @@
               </svg>
             </li>
             <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">Разработка сайтов</NuxtLink>
+              <NuxtLink to="/#offers">{{
+                $store.state.translations["main.site_development"]
+              }}</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -70,7 +76,9 @@
               </svg>
             </li>
             <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">Автоматизация бизнеса</NuxtLink>
+              <NuxtLink to="/#offers">{{
+                $store.state.translations["main.businnes_auto"]
+              }}</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -88,7 +96,9 @@
               </svg>
             </li>
             <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">Комлекстная упаковка</NuxtLink>
+              <NuxtLink to="/#offers">{{
+                $store.state.translations["main.complex_pack"]
+              }}</NuxtLink>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -109,16 +119,20 @@
         </div>
       </div>
       <div class="bottom">
-        <h4 class="par">Связаться с нами</h4>
-        <p class="sub">Мы будем рады вашим звонкам</p>
+        <h4 class="par">{{ $store.state.translations["main.contact_us"] }}</h4>
+        <p class="sub">{{ $store.state.translations["main.we_joy"] }}</p>
 
         <div class="person">
           <div class="img">
             <img src="@/assets/img/person-1.jpg" alt="" />
           </div>
           <div class="block">
-            <p class="name">Акмал</p>
-            <p class="status">Менежер</p>
+            <p class="name">
+              {{ $store.state.translations["main.manager_name"] }}
+            </p>
+            <p class="status">
+              {{ $store.state.translations["main.manager"] }}
+            </p>
           </div>
         </div>
 

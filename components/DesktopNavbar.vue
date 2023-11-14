@@ -9,8 +9,12 @@
             </NuxtLink>
           </div>
           <div class="right">
-            <NuxtLink class="link" to="/#team">Агентство</NuxtLink>
-            <NuxtLink class="link" to="/#projects">Работы</NuxtLink>
+            <NuxtLink class="link" to="/#team">{{
+              $store.state.translations["main.agency"]
+            }}</NuxtLink>
+            <NuxtLink class="link" to="/#projects">{{
+              $store.state.translations["main.works"]
+            }}</NuxtLink>
             <a href="tel:+998 97 666 66 66" class="tel">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,22 +40,22 @@
           <ul>
             <li>
               <NuxtLink to="/#projects" class="link">
-                Разработка сайтов
+                {{ $store.state.translations["main.site_development"] }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/#offers" class="link">
-                Мобильные приложение
+                {{ $store.state.translations["main.mobile_development"] }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/#offers" class="link">
-                Автоматизация бизнеса
+                {{ $store.state.translations["main.businnes_auto"] }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/#offers" class="link">
-                Комлекстная упаковка
+                {{ $store.state.translations["main.complex_pack"] }}
               </NuxtLink>
             </li>
           </ul>
@@ -62,7 +66,7 @@
               <img src="@/assets/gif/square.gif" alt="" />
             </span>
             <button class="application">
-              <p>Заказать проект</p>
+              <p>{{ $store.state.translations["main.order_project"] }}</p>
             </button>
           </div>
         </div>

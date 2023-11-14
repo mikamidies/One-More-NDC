@@ -1,14 +1,14 @@
 <template>
   <div class="wrap" id="faq">
     <div class="container">
-      <h4 class="title">Ko’p beriladigan savollar</h4>
+      <h4 class="title">{{ $store.state.translations["main.faq"] }}</h4>
       <div class="flex">
         <div class="left">
           <div
             class="dropdown"
             v-for="item in firstHalf"
             :key="item.id"
-            @click="dropAction(item.id)"
+            @click="dropAction(item.id), (handleHeight = true)"
             :class="{ heightAuto: dropVal == item.id }"
           >
             <div class="dropdown-button">
@@ -42,7 +42,7 @@
             v-for="item in secondHalf"
             :key="item.id"
             class="dropdown"
-            @click="dropAction(item.id)"
+            @click="dropAction(item.id), (handleHeight = true)"
             :class="{ heightAuto: dropVal == item.id }"
           >
             <div class="dropdown-button">
@@ -85,6 +85,7 @@ export default {
       dropVal: 1,
       firstHalf: "",
       secondHalf: "",
+      handleHeight: false,
     };
   },
 

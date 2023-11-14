@@ -20,31 +20,33 @@
                 fill="#525252"
               />
             </svg>
-            National Development Community
+            {{ $store.state.translations["main.ndc"] }}
           </p>
           <h4 class="title">
-            Мы предлагаем создание сайта с продающим wow-эффектом
+            {{ $store.state.translations["main.wow"] }}
           </h4>
         </div>
         <div class="right">
           <div class="items">
             <div class="item">
               <p class="num">5+</p>
-              <p class="sub">Лет в cфере</p>
+              <p class="sub">{{ $store.state.translations["main.years"] }}</p>
             </div>
             <div class="item">
               <p class="num">24+</p>
-              <p class="sub">Членов команды</p>
+              <p class="sub">{{ $store.state.translations["main.members"] }}</p>
             </div>
             <div class="item">
               <p class="num">150+</p>
-              <p class="sub">Проектов</p>
+              <p class="sub">
+                {{ $store.state.translations["main.projects"] }}
+              </p>
             </div>
           </div>
         </div>
       </div>
       <div class="bottom">
-        <p class="sup">Над вашим проектом будут работать</p>
+        <p class="sup">{{ $store.state.translations["main.team"] }}</p>
         <div class="humans">
           <div v-for="item in team" :key="item.id" class="person">
             <img :src="item.image" alt="" />

@@ -1,34 +1,41 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">Почему мы?</h4>
+      <h4 class="title">{{ $store.state.translations["main.why_us"] }}</h4>
       <div class="items">
         <div class="item">
-          <h4 class="name">Комплексные решения</h4>
+          <h4 class="name">
+            {{ $store.state.translations["main.cardo_title-1"] }}
+          </h4>
           <p class="sub">
-            Мы предлагаем создание сайта под ключ, начиная с разработки сайта и
-            заканчивая технической поддержкой.
+            {{ $store.state.translations["main.cardo_txt-1"] }}
           </p>
         </div>
         <div class="item">
-          <h4 class="name">Для нас нет невозможного</h4>
+          <h4 class="name">
+            {{ $store.state.translations["main.cardo_title-2"] }}
+          </h4>
           <p class="sub">
-            Мы находим решения для бизнес-задач любой сложности и работаем на
-            результат.
+            {{ $store.state.translations["main.cardo_txt-2"] }}
           </p>
         </div>
         <div class="item">
-          <h4 class="name">Ваш отзыв - наша репутация</h4>
+          <h4 class="name">
+            {{ $store.state.translations["main.cardo_title-3"] }}
+          </h4>
           <p class="sub">
-            Мы всегда доводим дело до конца и не бросаем заказчиков с нерешенной
-            проблемой или задачей.
+            {{ $store.state.translations["main.cardo_txt-3"] }}
           </p>
         </div>
         <div class="item">
-          <h4 class="name">Каждый дизайн:<span> индивидуален </span></h4>
+          <h4 class="name">
+            {{ $store.state.translations["main.cardo_title-4"]
+            }}<span>
+              {{ $store.state.translations["main.cardo_span"] }}
+            </span>
+          </h4>
           <p class="sub">
-            У нас дочерняя компания Mazmoon которая будет заниматься дизайном
-            вашего проекта
+            {{ $store.state.translations["main.cardo_txt-4"] }}
           </p>
           <a href="#" class="telegram">
             <svg
@@ -65,46 +72,50 @@
       </div>
       <div class="red">
         <div class="left">
-          <p class="par">Свяжитесь с нами - и вы сами увидите!</p>
+          <p class="par">
+            {{ $store.state.translations["main.red_title"] }}
+          </p>
           <div class="telega">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="12"
-              viewBox="0 0 15 12"
-              fill="none"
-            >
-              <path
-                d="M14.0075 0C14.4483 0 14.7808 0.386641 14.6029 1.10579L12.4455 11.2745C12.2947 11.9975 11.8578 12.1715 11.2546 11.8351L6.10843 8.0344C6.08847 8.02008 6.07221 8.00121 6.061 7.97936C6.04978 7.95751 6.04393 7.9333 6.04393 7.90874C6.04393 7.88418 6.04978 7.85997 6.061 7.83812C6.07221 7.81627 6.08847 7.7974 6.10843 7.78308L12.0511 2.41651C12.3218 2.17679 11.9931 2.0608 11.6374 2.27732L4.17909 6.98274C4.15647 6.99749 4.13079 7.0069 4.10399 7.01025C4.0772 7.0136 4.04999 7.0108 4.02444 7.00207L0.857845 6.00067C0.154159 5.79575 0.154159 5.31245 1.01637 4.96834L13.6866 0.0811946C13.7871 0.0329886 13.8962 0.00538155 14.0075 0Z"
-                fill="white"
-              />
-            </svg>
-            <p>@ndc_manager</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-            >
-              <path
-                d="M13.6078 6.28711L19.3208 12.0001L13.6078 17.7131M6.00684 12.0001H19.3038"
-                stroke="#EAEAEA"
-                stroke-width="1.2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="12"
+                viewBox="0 0 15 12"
+                fill="none"
+              >
+                <path
+                  d="M14.0075 0C14.4483 0 14.7808 0.386641 14.6029 1.10579L12.4455 11.2745C12.2947 11.9975 11.8578 12.1715 11.2546 11.8351L6.10843 8.0344C6.08847 8.02008 6.07221 8.00121 6.061 7.97936C6.04978 7.95751 6.04393 7.9333 6.04393 7.90874C6.04393 7.88418 6.04978 7.85997 6.061 7.83812C6.07221 7.81627 6.08847 7.7974 6.10843 7.78308L12.0511 2.41651C12.3218 2.17679 11.9931 2.0608 11.6374 2.27732L4.17909 6.98274C4.15647 6.99749 4.13079 7.0069 4.10399 7.01025C4.0772 7.0136 4.04999 7.0108 4.02444 7.00207L0.857845 6.00067C0.154159 5.79575 0.154159 5.31245 1.01637 4.96834L13.6866 0.0811946C13.7871 0.0329886 13.8962 0.00538155 14.0075 0Z"
+                  fill="white"
+                />
+              </svg>
+              <p>@ndc_manager</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M13.6078 6.28711L19.3208 12.0001L13.6078 17.7131M6.00684 12.0001H19.3038"
+                  stroke="#EAEAEA"
+                  stroke-width="1.2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
           </div>
           <p class="txt">
-            делаем ваш бизнес сильнее с помощью цифровых технологий
+            {{ $store.state.translations["main.red_sub"] }}
           </p>
         </div>
         <div class="right">
           <a href="tel:+998 97 666 66 66"> +998 97 666 66 66 </a>
           <button @click="modalHandle = !modalHandle">
-            Заказать званок
+            {{ $store.state.translations["services.order_call"] }}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -350,6 +361,11 @@ export default {
     display: none;
   }
   .telega {
+    display: flex;
+    justify-content: center;
+  }
+  .telega a {
+    color: white;
     display: inline-flex;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.15);
