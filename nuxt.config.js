@@ -25,7 +25,7 @@ export default {
   modules: ["@nuxtjs/axios", "vue-toastification/nuxt"],
 
   axios: {
-    baseURL: "https://ndcapi.pythonanywhere.com/api",
+    baseURL: process.env.BASE_URL,
   },
 
   build: {
