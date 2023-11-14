@@ -5,9 +5,9 @@
         <div class="top">
           <div class="left">
             <a :href="`tel:${info.number}`" class="num">{{ info.number }}</a>
-            <a :href="`mailto:${info.email}`"> info@ndc.uz </a>
+            <a :href="`mailto:${info.email}`"> {{ info.email }}</a>
             <p>
-              {{ info.address }}
+              {{ info.adress }}
             </p>
           </div>
           <div class="right">
@@ -41,9 +41,15 @@
       <div class="bottom">
         <p>{{ $store.state.translations["main.all_rights"] }}</p>
         <div class="socs">
-          <a href="#"> {{ $store.state.translations["main.facebook"] }} </a>
-          <a href="#"> {{ $store.state.translations["main.instagram"] }} </a>
-          <a href="#"> {{ $store.state.translations["main.telegram"] }} </a>
+          <a target="_blank" :href="info.facebook">
+            {{ $store.state.translations["main.facebook"] }}
+          </a>
+          <a target="_blank" :href="info.instagram">
+            {{ $store.state.translations["main.instagram"] }}
+          </a>
+          <a target="_blank" :href="info.telegram">
+            {{ $store.state.translations["main.telegram"] }}
+          </a>
         </div>
       </div>
     </div>
@@ -110,7 +116,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          {{ info.address }}
+          {{ info.adress }}
         </p>
       </div>
       <div class="info">
@@ -326,7 +332,7 @@ export default {
     width: 100%;
     height: 125px;
     content: "";
-    z-index: 99;
+    z-index: 1;
   }
   .iframe::after {
     background: linear-gradient(180deg, #010101 0%, rgba(10, 10, 10, 0) 100%);
@@ -336,7 +342,7 @@ export default {
     width: 100%;
     height: 125px;
     content: "";
-    z-index: 99;
+    z-index: 1;
     transform: rotate(180deg);
   }
 }

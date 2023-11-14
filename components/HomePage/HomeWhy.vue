@@ -37,7 +37,7 @@
           <p class="sub">
             {{ $store.state.translations["main.cardo_txt-4"] }}
           </p>
-          <a href="#" class="telegram">
+          <a target="_blank" :href="info.mazmoon_link" class="telegram">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -76,7 +76,7 @@
             {{ $store.state.translations["main.red_title"] }}
           </p>
           <div class="telega">
-            <a href="#">
+            <a target="_blank" :href="info.telegram">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -166,6 +166,10 @@ export default {
     const info = await infoApi.getInfo(this.$axios);
 
     this.info = info;
+  },
+
+  mounted() {
+    console.log(this.info);
   },
 
   watch: {
@@ -306,7 +310,8 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .items {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
   }
   .title {
     font-size: 16px;
@@ -325,6 +330,15 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     position: relative;
+  }
+  .item:nth-child(1) {
+    order: 0;
+  }
+  .item:nth-child(2) {
+    order: 2;
+  }
+  .item:nth-child(3) {
+    order: 1;
   }
   .name {
     font-size: 20px;

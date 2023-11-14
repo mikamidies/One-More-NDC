@@ -29,7 +29,7 @@
           </div>
           <div class="top">
             <h2 class="name">{{ item.title }}</h2>
-            <a :href="item.url" class="link">
+            <a :href="item.url" target="_blank" class="link">
               {{ `${item.url}`.replace("https://", "") }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,6 +177,7 @@ export default {
     font-style: normal;
     line-height: 120%;
     max-width: 70%;
+    font-family: var(--decor-bd);
   }
   .tags {
     display: none;

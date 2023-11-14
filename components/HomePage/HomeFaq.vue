@@ -242,7 +242,7 @@ export default {
     padding: 0px 16px 16px 16px;
   }
   .wrap {
-    min-height: 70vh;
+    min-height: 50vh;
   }
 }
 </style>

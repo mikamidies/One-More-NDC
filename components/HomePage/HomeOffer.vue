@@ -961,9 +961,10 @@ li {
   padding: 40px 0;
 }
 .inc {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
   align-items: center;
-  gap: 8px;
+  gap: 0px;
 }
 .inc p {
   color: #fff;
@@ -972,6 +973,7 @@ li {
   font-weight: 400;
   line-height: normal;
 }
+
 .cardo {
   border-radius: 30px;
   background: var(--Black, #0f0f0f);
