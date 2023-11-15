@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .master {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .mobile {
   display: none;
