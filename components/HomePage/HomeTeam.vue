@@ -45,10 +45,25 @@
           </div>
         </div>
       </div>
+      <div class="text">
+        <p>
+          Наша команда профессионалов уделяет внимание не только дизайну и
+          функционалу, но и исследованию особенностей узбекского рынка. Мы
+          анализируем потребительские привычки, предпочтения и требования вашей
+          целевой аудитории, чтобы создать сайт, который эффективно привлекает и
+          удерживает Ваших клиентов.
+        </p>
+      </div>
       <div class="bottom">
         <p class="sup">{{ $store.state.translations["main.team"] }}</p>
         <div class="humans">
-          <div v-for="item in team" :key="item.id" class="person">
+          <div
+            v-for="item in team"
+            :key="item.id"
+            data-aos="fade-right"
+            :data-aos-duration="item.id * 250"
+            class="person"
+          >
             <img :src="item.image" alt="" />
           </div>
         </div>
@@ -141,10 +156,19 @@ export default {
 .container {
   padding: 0 16px;
 }
+.text {
+  margin-bottom: 32px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  max-width: 60%;
+}
 @media screen and (max-width: 1200px) {
   .top {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 24px;
   }
   .left,
   .right {
@@ -164,7 +188,7 @@ export default {
     gap: 4px;
   }
   .title {
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     line-height: 120%; /* 38.4px */
@@ -205,6 +229,28 @@ export default {
   .person:nth-child(13),
   .person:nth-child(14) {
     display: none;
+  }
+  .text {
+    max-width: 100%;
+  }
+  .text p {
+    color: var(--Grey, #525252);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .title {
+    font-size: 24px;
+  }
+  .items {
+    align-items: flex-start;
+  }
+  .wrap {
+    padding: 24px 0;
   }
 }
 </style>

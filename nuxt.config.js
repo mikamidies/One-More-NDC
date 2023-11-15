@@ -16,7 +16,11 @@ export default {
 
   css: ["ant-design-vue/dist/antd.css", "@/assets/css/base.css"],
 
-  plugins: ["@/plugins/antd-ui", { src: "@/plugins/v-mask.js", ssr: false }],
+  plugins: [
+    "@/plugins/antd-ui",
+    { src: "@/plugins/v-mask.js", ssr: false },
+    "@/plugins/aos.client.js",
+  ],
 
   components: true,
 
@@ -32,6 +36,7 @@ export default {
     babel: {
       compact: true,
     },
+    vendor: ["aos"],
     standalone: true,
     extend(config, ctx) {
       config.externals = [

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="header">
         <div class="left">
-          <div>
+          <div class="taeyeon">
             <h4 class="title">
               {{ $store.state.translations["main.our_works"] }}
             </h4>
@@ -23,7 +23,13 @@
         </div>
       </div>
       <div class="items">
-        <div v-for="item in projects" :key="item.id" class="item">
+        <div
+          v-for="item in projects"
+          :key="item.id"
+          class="item"
+          data-aos="fade-up"
+          data-aos-duration="300"
+        >
           <div class="img">
             <img :src="item.image" alt="" class="pic" />
           </div>
@@ -208,9 +214,12 @@ export default {
     height: 264px;
     border-radius: 16px;
   }
+  .img:hover .pic {
+    transform: scale(1);
+  }
   .top,
   .sub {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   .name {
     font-size: 16px;
@@ -230,6 +239,14 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+  .top {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 390px) {
+  .taeyeon {
+    max-width: 50%;
   }
 }
 </style>

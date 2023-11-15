@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style scoped>
+.master {
+  overflow-x: hidden;
+}
 .mobile {
   display: none;
 }

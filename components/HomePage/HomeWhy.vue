@@ -3,7 +3,7 @@
     <div class="container">
       <h4 class="title">{{ $store.state.translations["main.why_us"] }}</h4>
       <div class="items">
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <h4 class="name">
             {{ $store.state.translations["main.cardo_title-1"] }}
           </h4>
@@ -11,7 +11,7 @@
             {{ $store.state.translations["main.cardo_txt-1"] }}
           </p>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <h4 class="name">
             {{ $store.state.translations["main.cardo_title-2"] }}
           </h4>
@@ -19,7 +19,7 @@
             {{ $store.state.translations["main.cardo_txt-2"] }}
           </p>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <h4 class="name">
             {{ $store.state.translations["main.cardo_title-3"] }}
           </h4>
@@ -27,7 +27,7 @@
             {{ $store.state.translations["main.cardo_txt-3"] }}
           </p>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <h4 class="name">
             {{ $store.state.translations["main.cardo_title-4"]
             }}<span>
@@ -70,7 +70,7 @@
           </a>
         </div>
       </div>
-      <div class="red">
+      <div class="red" data-aos="fade-up" data-aos-duration="300">
         <div class="left">
           <p class="par">
             {{ $store.state.translations["main.red_title"] }}

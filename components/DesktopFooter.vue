@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="red">
+    <div class="red" data-aos="fade-up" data-aos-duration="300">
       <div class="container">
         <div class="cardo">
           <p>{{ $store.state.translations["main.free"] }}</p>
@@ -344,6 +344,19 @@ export default {
     content: "";
     z-index: 1;
     transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 390px) {
+  .cardo p {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .cardo button {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+  .address svg {
+    transform: translateY(5px);
   }
 }
 </style>

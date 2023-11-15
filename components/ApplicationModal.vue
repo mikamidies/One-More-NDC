@@ -34,7 +34,7 @@
               {{ $store.state.translations["main.manager_name"] }}
             </p>
             <p class="status">
-              {{ $store.state.translations["main.manger"] }}
+              {{ $store.state.translations["main.manager"] }}
             </p>
           </div>
         </div>
@@ -410,6 +410,28 @@ form .flexer {
   .button span,
   .button img {
     width: 500px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .hint {
+    margin-bottom: 24px;
+  }
+  .flexer {
+    margin: 0;
+  }
+  .body {
+    gap: 24px;
+    overflow: hidden;
+  }
+  .input {
+    min-width: 0;
+  }
+  .person img {
+    width: 50px;
+    height: 50px;
+  }
+  .name {
+    font-size: 18px;
   }
 }
 </style>

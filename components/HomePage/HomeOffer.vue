@@ -147,11 +147,23 @@
           </div>
         </div>
         <div class="right">
-          <img src="@/assets/img/project-1.jpg" alt="" class="project" />
+          <div class="swiper" ref="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="@/assets/img/project-1.jpg" alt="" class="project" />
+              </div>
+              <div class="swiper-slide">
+                <img src="@/assets/img/project-2.jpg" alt="" class="project" />
+              </div>
+              <div class="swiper-slide">
+                <img src="@/assets/img/project-3.jpg" alt="" class="project" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="items">
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <p class="tag">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +194,7 @@
             {{ $store.state.translations["services.order_project"] }}
           </button>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <p class="tag">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +224,7 @@
             {{ $store.state.translations["services.order_project"] }}
           </button>
         </div>
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="300">
           <p class="tag">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -634,6 +646,9 @@
 </template>
 
 <script>
+import Swiper from "swiper/swiper-bundle.js";
+import "swiper/swiper-bundle.min.css";
+
 export default {
   data() {
     return {
@@ -646,6 +661,18 @@ export default {
     closeModal() {
       this.appHandle = false;
     },
+  },
+
+  mounted() {
+    new Swiper(this.$refs.swiper, {
+      grabCursor: true,
+      effect: "cards",
+      autoplay: {
+        delay: 2000,
+        disableOnInteractions: false,
+      },
+      speed: 500,
+    });
   },
 
   watch: {
@@ -674,6 +701,14 @@ export default {
 <style scoped>
 .wrap {
   padding: 80px 0;
+}
+.right {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.swiper {
+  width: 550px;
 }
 .title {
   color: var(--White, #fff);
@@ -963,7 +998,7 @@ li {
 .inc {
   display: grid;
   grid-template-columns: 1fr 9fr;
-  align-items: center;
+  align-items: start;
   gap: 0px;
 }
 .inc p {
@@ -1180,6 +1215,7 @@ li {
   .includes {
     grid-template-columns: repeat(1, 1fr);
     gap: 12px;
+    align-items: flex-start;
   }
   .par {
     margin-bottom: 16px;
@@ -1233,6 +1269,9 @@ li {
     line-height: 24px;
     width: 100%;
     justify-content: center;
+  }
+  .swiper {
+    width: 100%;
   }
 }
 </style>

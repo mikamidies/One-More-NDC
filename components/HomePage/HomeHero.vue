@@ -13,6 +13,7 @@
               {{ $store.state.translations["main.hero-sub"] }}
             </p>
           </div>
+          <div class="risk"></div>
           <form @submit.prevent="onSubmit()">
             <div class="flexer">
               <div class="input">
@@ -415,6 +416,21 @@ form .flexer {
     font-style: normal;
     font-weight: 500;
     line-height: 24px; /* 133.333% */
+  }
+}
+@media screen and (max-width: 380px) {
+  .title {
+    font-size: 28px;
+  }
+  .title span {
+    font-size: 20px;
+  }
+  .square {
+    width: 200px;
+    height: 200px;
+  }
+  .input {
+    min-width: 0;
   }
 }
 </style>

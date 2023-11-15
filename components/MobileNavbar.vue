@@ -247,11 +247,26 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
 .burger button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 200px;
+  height: 200px;
+  z-index: 99;
 }
 .menu {
   position: fixed;
@@ -437,5 +452,38 @@ export default {
 }
 .menu.open .bottom {
   transform: translateY(0%);
+}
+@media screen and (max-width: 380px) {
+  .bottom {
+    padding: 16px;
+  }
+  .person img {
+    width: 50px;
+    height: 50px;
+  }
+  .name {
+    font-size: 18px;
+  }
+  .sub {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .person {
+    margin-bottom: 16px;
+  }
+  .num a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .telega {
+    margin-bottom: 16px;
+  }
+  .links li {
+    padding: 8px 12px;
+  }
+  .x button {
+    width: 50px;
+    height: 50px;
+  }
 }
 </style>
