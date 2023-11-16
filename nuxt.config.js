@@ -20,6 +20,7 @@ export default {
     "@/plugins/antd-ui",
     { src: "@/plugins/v-mask.js", ssr: false },
     "@/plugins/aos.client.js",
+    { src: "@/plugins/facebook.js", ssr: false },
   ],
 
   components: true,
