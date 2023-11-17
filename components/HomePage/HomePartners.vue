@@ -253,11 +253,12 @@ export default {
   max-width: 923px;
 }
 .swiper1 {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 .pic {
   max-height: 60px;
   min-height: 40px;
+  max-width: 70%;
   object-fit: contain;
 }
 .swiper-slide {
