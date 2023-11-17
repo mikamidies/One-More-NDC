@@ -1,3 +1,5 @@
+import tree from "ant-design-vue/lib/tree";
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -12,6 +14,12 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-B8835VNELF",
+        async: true,
+      },
+    ],
   },
 
   css: ["ant-design-vue/dist/antd.css", "@/assets/css/base.css"],
