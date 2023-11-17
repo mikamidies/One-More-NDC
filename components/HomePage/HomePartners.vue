@@ -106,7 +106,6 @@ export default {
       breakpoints: {
         1024: {
           slidesPerView: 6,
-          disableOnInteraction: false,
         },
       },
     });
@@ -257,8 +256,15 @@ export default {
   margin-bottom: 32px;
 }
 .pic {
-  height: 40px;
+  max-height: 60px;
+  min-height: 40px;
   object-fit: contain;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
 }
 @media screen and (max-width: 1024px) {
   .title {

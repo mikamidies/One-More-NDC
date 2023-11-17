@@ -21,6 +21,7 @@ export default {
     { src: "@/plugins/v-mask.js", ssr: false },
     "@/plugins/aos.client.js",
     { src: "@/plugins/facebook.js", ssr: false },
+    { src: "@/plugins/google.js", ssr: false },
   ],
 
   components: true,
