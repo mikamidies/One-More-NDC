@@ -13,23 +13,29 @@
           <div class="right">
             <ul>
               <li>
-                <a href=""> {{ $store.state.translations["main.ux-ui"] }} </a>
+                <NuxtLink to="/#offers">
+                  {{ $store.state.translations["main.ux-ui"] }}
+                </NuxtLink>
               </li>
               <li>
-                <a href="">
+                <NuxtLink to="/#offers">
                   {{ $store.state.translations["main.mobile_development"] }}
-                </a>
+                </NuxtLink>
               </li>
               <li>
-                <a href="">{{ $store.state.translations["main.crm"] }} </a>
+                <NuxtLink to="/#offers"
+                  >{{ $store.state.translations["main.crm"] }}
+                </NuxtLink>
               </li>
               <li>
-                <a href=""> {{ $store.state.translations["main.smm"] }} </a>
+                <NuxtLink to="/#offers">
+                  {{ $store.state.translations["main.smm"] }}
+                </NuxtLink>
               </li>
               <li>
-                <a href="">
+                <NuxtLink to="/#offers">
                   {{ $store.state.translations["main.branding"] }}
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </div>
@@ -150,7 +156,11 @@ export default {
   },
 
   async fetch() {
-    const info = await infoApi.getInfo(this.$axios);
+    const info = await infoApi.getInfo(this.$axios, {
+      headers: {
+        language: this.$i18n.locale,
+      },
+    });
 
     this.info = info;
   },
@@ -194,6 +204,7 @@ export default {
   font-weight: 400;
   line-height: 72px; /* 112.5% */
   display: flex;
+  max-width: 70%;
 }
 .right a {
   color: #797979;

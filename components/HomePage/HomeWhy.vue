@@ -163,14 +163,16 @@ export default {
   },
 
   async fetch() {
-    const info = await infoApi.getInfo(this.$axios);
+    const info = await infoApi.getInfo(this.$axios, {
+      headers: {
+        language: this.$i18n.locale,
+      },
+    });
 
     this.info = info;
   },
 
-  mounted() {
-    console.log(this.info);
-  },
+  mounted() {},
 
   watch: {
     modalHandle(val) {

@@ -1,10 +1,12 @@
 export default {
-  async getFaq(axios) {
+  async getFaq(axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get("/faq", {});
+        res = await axios.get("/faq", {
+          ...params,
+        });
       }
       return res.data.results;
     } catch (e) {

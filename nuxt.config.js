@@ -36,7 +36,15 @@ export default {
 
   buildModules: [],
 
-  modules: ["@nuxtjs/axios", "vue-toastification/nuxt"],
+  modules: ["@nuxtjs/axios", "vue-toastification/nuxt", "@nuxtjs/i18n"],
+
+  i18n: {
+    locales: ["ru", "uz"],
+    defaultLocale: "ru",
+    vueI18n: {
+      fallbackLocale: "ru",
+    },
+  },
 
   axios: {
     baseURL: process.env.BASE_URL,

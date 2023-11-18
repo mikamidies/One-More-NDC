@@ -28,17 +28,24 @@
     <div class="menu" :class="{ open: menuHandle }">
       <div class="up">
         <div class="lang">
-          <button class="active">
-            {{ $store.state.translations["main.russian"] }}
-          </button>
-          <button>{{ $store.state.translations["main.uzbek"] }}</button>
+          <a
+            :href="switchLocalePath('ru')"
+            :class="{ active: $i18n.locale == 'ru' }"
+            >{{ $store.state.translations["main.russian"] }}</a
+          >
+          <a
+            :href="switchLocalePath('uz')"
+            :class="{ active: $i18n.locale == 'uz' }"
+          >
+            {{ $store.state.translations["main.uzbek"] }}</a
+          >
         </div>
         <div class="links">
           <ul>
-            <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">{{
-                $store.state.translations["main.mobile_development"]
-              }}</NuxtLink>
+            <li @click="(menuHandle = false), scrollElement('offers')">
+              <button>
+                {{ $store.state.translations["main.mobile_development"] }}
+              </button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -55,10 +62,10 @@
                 />
               </svg>
             </li>
-            <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">{{
-                $store.state.translations["main.site_development"]
-              }}</NuxtLink>
+            <li @click="(menuHandle = false), scrollElement('offers')">
+              <button>
+                {{ $store.state.translations["main.site_development"] }}
+              </button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -75,10 +82,10 @@
                 />
               </svg>
             </li>
-            <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">{{
-                $store.state.translations["main.businnes_auto"]
-              }}</NuxtLink>
+            <li @click="(menuHandle = false), scrollElement('offers')">
+              <button>
+                {{ $store.state.translations["main.businnes_auto"] }}
+              </button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -95,10 +102,10 @@
                 />
               </svg>
             </li>
-            <li @click="menuHandle = false">
-              <NuxtLink to="/#offers">{{
-                $store.state.translations["main.complex_pack"]
-              }}</NuxtLink>
+            <li @click="(menuHandle = false), scrollElement('offers')">
+              <button>
+                {{ $store.state.translations["main.complex_pack"] }}
+              </button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -210,10 +217,19 @@ export default {
     };
   },
 
-  methods: {},
+  methods: {
+    scrollElement(id) {
+      const element = document.getElementById(id);
+      element.scrollIntoView({ block: "start", behavior: "smooth" });
+    },
+  },
 
   async fetch() {
-    const info = await infoApi.getInfo(this.$axios);
+    const info = await infoApi.getInfo(this.$axios, {
+      headers: {
+        language: this.$i18n.locale,
+      },
+    });
 
     this.info = info;
   },
@@ -288,9 +304,8 @@ export default {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  display: none;
 }
-.lang button {
+.lang a {
   color: var(--White, #fff);
   font-size: 14px;
   font-style: normal;
@@ -298,8 +313,11 @@ export default {
   line-height: 150%; /* 21px */
   border-radius: 6px;
   height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.lang button.active {
+.lang a.active {
   background: var(--Grey, #525252);
 }
 .links ul {

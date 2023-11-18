@@ -54,7 +54,7 @@
       <div class="bottom">
         <ul>
           <li>
-            <NuxtLink to="/#faq" type="button">
+            <button @click="scrollElement('faq')" type="button">
               <p>{{ $store.state.translations["main.faq_1"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,10 +72,10 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink to="/#faq" type="button">
+            <button @click="scrollElement('faq')" type="button">
               <p>{{ $store.state.translations["main.faq_2"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,10 +93,10 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink to="/#faq" type="button">
+            <button @click="scrollElement('faq')" type="button">
               <p>{{ $store.state.translations["main.faq_3"] }}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </NuxtLink>
+            </button>
           </li>
         </ul>
       </div>
@@ -136,6 +136,11 @@ export default {
   mounted() {},
 
   methods: {
+    scrollElement(id) {
+      const element = document.getElementById(id);
+      element.scrollIntoView({ block: "start", behavior: "smooth" });
+    },
+
     async onSubmit() {
       const formData = {
         number: "+998" + this.number,
@@ -290,7 +295,7 @@ form .flexer {
   align-items: center;
   gap: 16px;
 }
-.bottom a {
+.bottom button {
   display: flex;
   align-items: center;
   gap: 8px;

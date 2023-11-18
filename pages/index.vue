@@ -21,14 +21,25 @@ import partnersApi from "@/api/partners";
 import translationsApi from "@/api/translations";
 
 export default {
-  async asyncData({ $axios, store }) {
-    const faq = await faqApi.getFaq($axios);
-    const team = await teamApi.getTeam($axios);
-    const projects = await projectsApi.getProjects($axios);
-    const partners = await partnersApi.getPartners($axios);
-    const translations = await translationsApi.getTranslations($axios);
+  data() {
+    return {};
+  },
 
-    await store.commit("getTranslations", translations.data);
+  async asyncData({ $axios, query, i18n }) {
+    const faq = await faqApi.getFaq($axios, {
+      ...query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const team = await teamApi.getTeam($axios);
+    const projects = await projectsApi.getProjects($axios, {
+      ...query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const partners = await partnersApi.getPartners($axios);
 
     return {
       faq,
@@ -36,6 +47,34 @@ export default {
       projects,
       partners,
     };
+  },
+
+  async fetch() {
+    const translations = await translationsApi.getTranslations(this.$axios, {
+      headers: {
+        Language: this.$i18n.locale,
+      },
+    });
+
+    await this.$store.commit("getTranslations", translations.data);
+  },
+
+  watch: {
+    async currentLang(val) {
+      const translations = await translationsApi.getTranslations(this.$axios, {
+        headers: {
+          Language: this.$i18n.locale,
+        },
+      });
+
+      await this.$store.commit("getTranslations", translations.data);
+    },
+  },
+
+  computed: {
+    currentLang() {
+      return this.$i18n.locale;
+    },
   },
 };
 </script>

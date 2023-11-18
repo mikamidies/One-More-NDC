@@ -9,12 +9,38 @@
             </NuxtLink>
           </div>
           <div class="right">
-            <NuxtLink class="link" to="/#team">{{
-              $store.state.translations["main.agency"]
-            }}</NuxtLink>
-            <NuxtLink class="link" to="/#projects">{{
-              $store.state.translations["main.works"]
-            }}</NuxtLink>
+            <div class="lang">
+              <p class="current">
+                {{ $i18n.locale }}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="9"
+                  viewBox="0 0 16 9"
+                  fill="none"
+                >
+                  <path
+                    d="M14.433 1.45L8.004 7.88L1.574 1.45"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </p>
+              <div class="drop">
+                <nuxt-link :to="switchLocalePath('ru')">Русский</nuxt-link>
+                <nuxt-link :to="switchLocalePath('uz')">O'zbekcha</nuxt-link>
+              </div>
+            </div>
+
+            <button class="link" @click="scrollElement('team')">
+              {{ $store.state.translations["main.agency"] }}
+            </button>
+            <button class="link" @click="scrollElement('projects')">
+              {{ $store.state.translations["main.works"] }}
+            </button>
             <a :href="`tel:${info.number}`" class="tel">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,24 +65,24 @@
         <div class="left">
           <ul>
             <li>
-              <NuxtLink to="/#projects" class="link">
+              <button @click="scrollElement('projects')" class="link">
                 {{ $store.state.translations["main.site_development"] }}
-              </NuxtLink>
+              </button>
             </li>
             <li>
-              <NuxtLink to="/#offers" class="link">
+              <button @click="scrollElement('offers')" class="link">
                 {{ $store.state.translations["main.mobile_development"] }}
-              </NuxtLink>
+              </button>
             </li>
             <li>
-              <NuxtLink to="/#offers" class="link">
+              <button @click="scrollElement('offers')" class="link">
                 {{ $store.state.translations["main.businnes_auto"] }}
-              </NuxtLink>
+              </button>
             </li>
             <li>
-              <NuxtLink to="/#offers" class="link">
+              <button @click="scrollElement('offers')" class="link">
                 {{ $store.state.translations["main.complex_pack"] }}
-              </NuxtLink>
+              </button>
             </li>
           </ul>
         </div>
@@ -83,6 +109,7 @@
 
 <script>
 import infoApi from "@/api/info.js";
+import team from "~/api/team";
 
 export default {
   data() {
@@ -96,10 +123,19 @@ export default {
     closeModal() {
       this.modalHandle = false;
     },
+
+    scrollElement(id) {
+      const element = document.getElementById(id);
+      element.scrollIntoView({ block: "start", behavior: "smooth" });
+    },
   },
 
   async fetch() {
-    const info = await infoApi.getInfo(this.$axios);
+    const info = await infoApi.getInfo(this.$axios, {
+      headers: {
+        language: this.$i18n.locale,
+      },
+    });
 
     this.info = info;
   },
@@ -204,5 +240,49 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.lang {
+  position: relative;
+  cursor: pointer;
+}
+.current {
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+.drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  background: #444344;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.lang:hover .drop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.drop a {
+  padding: 8px 12px 0 8px;
+  display: flex;
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  opacity: 0.8;
 }
 </style>
