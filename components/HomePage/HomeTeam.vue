@@ -60,8 +60,7 @@
           <div
             v-for="item in team"
             :key="item.id"
-            data-aos="fade-right"
-            :data-aos-duration="item.id * 250"
+            data-aos="fade-up"
             class="person"
           >
             <img :src="item.image" alt="" />

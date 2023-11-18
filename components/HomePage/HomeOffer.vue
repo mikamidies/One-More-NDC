@@ -150,13 +150,13 @@
           <div class="swiper" ref="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="@/assets/img/project-1.jpg" alt="" class="project" />
+                <img src="@/assets/img/pro-1.jpg" alt="" class="project" />
               </div>
               <div class="swiper-slide">
-                <img src="@/assets/img/project-2.jpg" alt="" class="project" />
+                <img src="@/assets/img/pro-2.jpg" alt="" class="project" />
               </div>
               <div class="swiper-slide">
-                <img src="@/assets/img/project-3.jpg" alt="" class="project" />
+                <img src="@/assets/img/pro-3.jpg" alt="" class="project" />
               </div>
             </div>
           </div>
