@@ -296,7 +296,19 @@
             </div>
           </div>
           <div class="right">
-            <img src="@/assets/img/project-1.jpg" alt="" class="pic" />
+            <div class="swiper" ref="swiperSec">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="@/assets/img/pro-1.jpg" alt="" class="project" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="@/assets/img/pro-2.jpg" alt="" class="project" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="@/assets/img/pro-3.jpg" alt="" class="project" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="mid">
@@ -673,6 +685,16 @@ export default {
       },
       speed: 500,
     });
+
+    new Swiper(this.$refs.swiperSec, {
+      grabCursor: true,
+      effect: "cards",
+      autoplay: {
+        delay: 2000,
+        disableOnInteractions: false,
+      },
+      speed: 500,
+    });
   },
 
   watch: {
@@ -936,9 +958,11 @@ li {
   background: #1b1b1b;
   box-shadow: 0px 40px 51.5px 0px rgba(0, 0, 0, 0.25);
   padding: 80px;
-  max-width: 80%;
+  width: 80%;
+  max-width: 1440px;
   height: max-content;
   position: relative;
+  overflow: hidden;
 }
 .pic {
   width: 100%;
@@ -1164,6 +1188,7 @@ li {
     padding: 0;
   }
   .body {
+    width: 100%;
     max-width: 100%;
     border: 0;
     padding: 120px 16px 56px 16px;
