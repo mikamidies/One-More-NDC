@@ -36,7 +36,7 @@
           <div class="top">
             <h2 class="name">{{ item.title }}</h2>
             <a :href="item.url" target="_blank" class="link">
-              {{ `${item.url}`.replace("https://", "") }}
+              {{ item.show_url }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
