@@ -25,6 +25,19 @@ export default {
     return {};
   },
 
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: "facebook-domain-verification",
+          name: "facebook-domain-verification",
+          content: "lpoapvto6pqebfmr6bqmpkdvfyl90o",
+        },
+      ],
+    };
+  },
+
   async asyncData({ $axios, query, i18n }) {
     const faq = await faqApi.getFaq($axios, {
       ...query,
