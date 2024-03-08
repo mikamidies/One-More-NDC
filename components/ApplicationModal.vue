@@ -60,6 +60,22 @@
               :placeholder="$store.state.translations[`main.your_name`]"
             />
           </div>
+          <div class="buttons">
+            <p class="sup">
+              {{ $store.state.translations["main.site-type"] }}
+            </p>
+            <div class="items">
+              <div
+                class="batton"
+                v-for="item in types"
+                :key="item.id"
+                @click="type = item.id"
+                :class="{ active: type == item.id }"
+              >
+                {{ item.title }}
+              </div>
+            </div>
+          </div>
           <p class="hint">{{ $store.state.translations["main.call_back"] }}</p>
           <div class="flex">
             <div class="manager">
@@ -99,14 +115,28 @@ export default {
       myInputModel: "",
       number: "",
       full_name: "",
+
+      types: [],
+      type: null,
     };
   },
+
+  async fetch() {
+    const typesData = await formApi.getTypes(this.$axios);
+
+    this.types = typesData;
+
+    this.type = this.types[0]?.id;
+  },
+
+  mounted() {},
 
   methods: {
     async onSubmit() {
       const formData = {
         number: "+998" + this.number,
         full_name: this.full_name,
+        type: this.type,
       };
 
       const res = await formApi.sendApplication(formData);
@@ -119,6 +149,7 @@ export default {
 
       this.number = "";
       this.full_name = "";
+      this.type = 1;
 
       this.$emit("closeModal");
     },
@@ -127,6 +158,38 @@ export default {
 </script>
 
 <style scoped>
+.buttons {
+  margin: 32px 0;
+}
+.sup {
+  color: var(--White, #fff);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  margin-bottom: 16px;
+}
+.items {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.batton {
+  color: var(--White, #fff);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  padding: 12px 24px;
+  border-radius: 78px;
+  background: var(--Grey, #525252);
+  cursor: pointer;
+}
+.batton.active {
+  border-radius: 8500px;
+  background: #a050e2;
+  box-shadow: 0px 8px 69px 0px rgba(161, 80, 227, 0.58);
+}
 .wrap {
   position: fixed;
   top: 0;
@@ -157,6 +220,7 @@ export default {
   background: #1b1b1b;
   box-shadow: 0px 40px 51.5px 0px rgba(0, 0, 0, 0.25);
   min-width: 1200px;
+  max-width: 1200px;
   padding: 60px 40px 40px 40px;
   display: grid;
   grid-template-columns: 3fr 7fr;
@@ -410,6 +474,14 @@ form .flexer {
   .button span,
   .button img {
     width: 500px;
+  }
+  .batton {
+    padding: 8px 16px;
+    border-radius: 78px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
   }
 }
 @media screen and (max-width: 380px) {
