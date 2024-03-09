@@ -16,7 +16,7 @@
           <div class="risk"></div>
           <div class="form">
             <div class="flexer">
-              <div class="input">
+              <!-- <div class="input">
                 <span> +998 </span>
                 <input
                   type="text"
@@ -25,7 +25,7 @@
                   v-model="number"
                   required
                 />
-              </div>
+              </div> -->
               <div class="button" @click="appHandle = !appHandle">
                 <span>
                   <img src="@/assets/gif/square.gif" alt="" />
@@ -278,8 +278,8 @@ export default {
   line-height: 24px; /* 133.333% */
 }
 .hint {
+  display: none;
   margin-top: 4px;
-  padding-left: 58px;
   color: var(--Grey, #525252);
   opacity: 0.8;
   font-size: 18px;

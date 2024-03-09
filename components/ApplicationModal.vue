@@ -80,7 +80,7 @@
           <div class="flex">
             <div class="manager">
               <div class="img">
-                <img src="@/assets/img/person-1.jpg" alt="" />
+                <img src="@/assets/img/user.png" alt="" />
               </div>
               <div class="block">
                 <p class="name">
