@@ -60,6 +60,13 @@
               :placeholder="$store.state.translations[`main.your_name`]"
             />
           </div>
+          <input
+            v-model="message"
+            required
+            type="text"
+            class="second input fuller"
+            :placeholder="$store.state.translations[`main.comment`]"
+          />
           <div class="buttons">
             <p class="sup">
               {{ $store.state.translations["main.site-type"] }}
@@ -115,6 +122,7 @@ export default {
       myInputModel: "",
       number: "",
       full_name: "",
+      message: "",
 
       types: [],
       type: null,
@@ -137,6 +145,7 @@ export default {
         number: "+998" + this.number,
         full_name: this.full_name,
         type: this.type,
+        message: this.message,
       };
 
       const res = await formApi.sendApplication(formData);
@@ -150,6 +159,7 @@ export default {
       this.number = "";
       this.full_name = "";
       this.type = 1;
+      this.message = "";
 
       this.$emit("closeModal");
     },
@@ -158,6 +168,10 @@ export default {
 </script>
 
 <style scoped>
+.fuller {
+  width: 100%;
+  margin-top: 8px;
+}
 .buttons {
   margin: 32px 0;
 }
