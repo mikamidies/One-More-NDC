@@ -62,7 +62,6 @@
           </div>
           <input
             v-model="message"
-            required
             type="text"
             class="second input fuller"
             :placeholder="$store.state.translations[`main.comment`]"
