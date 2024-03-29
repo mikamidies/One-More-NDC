@@ -2,111 +2,117 @@
   <div class="wrap">
     <div class="space" @click="$emit('closeModal')"></div>
     <div class="body">
-      <div @click="$emit('closeModal')" class="x">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M4.44458 4.43066L11.5552 11.54M4.44458 11.54L11.5552 4.43066"
-            stroke="white"
-            stroke-width="1.5"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
-      <div class="left">
-        <h4 class="title">{{ $store.state.translations["main.leave_app"] }}</h4>
-        <p class="sub">
-          {{ $store.state.translations["main.leave_contacts"] }}
-        </p>
-        <div class="person">
-          <div class="img">
-            <img src="@/assets/img/person-1.jpg" alt="" />
-          </div>
-          <div class="block">
-            <p class="name">
-              {{ $store.state.translations["main.manager_name"] }}
-            </p>
-            <p class="status">
-              {{ $store.state.translations["main.manager"] }}
-            </p>
+      <div class="scroller">
+        <div @click="$emit('closeModal')" class="x">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M4.44458 4.43066L11.5552 11.54M4.44458 11.54L11.5552 4.43066"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="left">
+          <h4 class="title">
+            {{ $store.state.translations["main.leave_app"] }}
+          </h4>
+          <p class="sub">
+            {{ $store.state.translations["main.leave_contacts"] }}
+          </p>
+          <div class="person">
+            <div class="img">
+              <img src="@/assets/img/user.png" alt="" />
+            </div>
+            <div class="block">
+              <p class="name">
+                {{ $store.state.translations["main.manager_name"] }}
+              </p>
+              <p class="status">
+                {{ $store.state.translations["main.manager"] }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="right">
-        <form @submit.prevent="onSubmit()">
-          <div class="flexer">
-            <div class="input">
-              <span> +998 </span>
+        <div class="right">
+          <form @submit.prevent="onSubmit()">
+            <div class="flexer">
+              <div class="input">
+                <span> +998 </span>
+                <input
+                  type="text"
+                  placeholder="(00) 000-00-00"
+                  v-mask="'(##) ###-##-##'"
+                  v-model="number"
+                  required
+                />
+              </div>
               <input
-                type="text"
-                placeholder="(00) 000-00-00"
-                v-mask="'(##) ###-##-##'"
-                v-model="number"
+                v-model="full_name"
                 required
+                type="text"
+                class="second input"
+                :placeholder="$store.state.translations[`main.your_name`]"
               />
             </div>
             <input
-              v-model="full_name"
-              required
+              v-model="message"
               type="text"
-              class="second input"
-              :placeholder="$store.state.translations[`main.your_name`]"
+              class="second input fuller"
+              :placeholder="$store.state.translations[`main.comment`]"
             />
-          </div>
-          <input
-            v-model="message"
-            type="text"
-            class="second input fuller"
-            :placeholder="$store.state.translations[`main.comment`]"
-          />
-          <div class="buttons">
-            <p class="sup">
-              {{ $store.state.translations["main.site-type"] }}
+            <div class="buttons">
+              <p class="sup">
+                {{ $store.state.translations["main.site-type"] }}
+              </p>
+              <div class="items">
+                <div
+                  class="batton"
+                  v-for="item in types"
+                  :key="item.id"
+                  @click="type = item.id"
+                  :class="{ active: type == item.id }"
+                >
+                  {{ item.title }}
+                </div>
+              </div>
+            </div>
+            <p class="hint">
+              {{ $store.state.translations["main.call_back"] }}
             </p>
-            <div class="items">
-              <div
-                class="batton"
-                v-for="item in types"
-                :key="item.id"
-                @click="type = item.id"
-                :class="{ active: type == item.id }"
-              >
-                {{ item.title }}
+            <div class="flex">
+              <div class="manager">
+                <div class="img">
+                  <img src="@/assets/img/user.png" alt="" />
+                </div>
+                <div class="block">
+                  <p class="name">
+                    {{ $store.state.translations["main.manager_name"] }}
+                  </p>
+                  <p class="status">
+                    {{ $store.state.translations["main.manager"] }}
+                  </p>
+                </div>
+              </div>
+              <div class="button">
+                <span>
+                  <img src="@/assets/gif/square.gif" alt="" />
+                </span>
+                <button type="submit" class="application">
+                  <p>{{ $store.state.translations["main.order_project"] }}</p>
+                </button>
               </div>
             </div>
-          </div>
-          <p class="hint">{{ $store.state.translations["main.call_back"] }}</p>
-          <div class="flex">
-            <div class="manager">
-              <div class="img">
-                <img src="@/assets/img/user.png" alt="" />
-              </div>
-              <div class="block">
-                <p class="name">
-                  {{ $store.state.translations["main.manager_name"] }}
-                </p>
-                <p class="status">
-                  {{ $store.state.translations["main.manager"] }}
-                </p>
-              </div>
-            </div>
-            <div class="button">
-              <span>
-                <img src="@/assets/gif/square.gif" alt="" />
-              </span>
-              <button type="submit" class="application">
-                <p>{{ $store.state.translations["main.order_project"] }}</p>
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -235,10 +241,12 @@ export default {
   min-width: 1200px;
   max-width: 1200px;
   padding: 60px 40px 40px 40px;
+  position: relative;
+}
+.scroller {
   display: grid;
   grid-template-columns: 3fr 7fr;
   gap: 40px;
-  position: relative;
 }
 .title {
   color: var(--White, #fff);
@@ -386,20 +394,38 @@ form .flexer {
 @media screen and (max-width: 1024px) {
   .wrap {
     align-items: flex-end;
-    padding-bottom: 0 !important;
+    padding: 0 !important;
   }
-
+  .items {
+    overflow-x: visible;
+  }
+  .batton {
+    white-space: nowrap;
+  }
   .body {
+    height: 100%;
+    overflow: hidden;
     border: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     min-width: unset;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 0px;
     background: #1b1b1b;
     padding: 24px 16px;
     width: 100%;
     transition: 0.4s;
     transform: translateY(100%);
+  }
+  .scroller {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: auto;
+    height: 100%;
+    margin-right: -8px;
+    padding-right: 8px;
+    gap: 24px;
   }
   .wrap.open .body {
     transform: translateY(0);
@@ -414,7 +440,15 @@ form .flexer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 12px;
+    padding-bottom: 12px;
+    background: #1b1b1b;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    margin-bottom: 0;
+  }
+  .x {
+    z-index: 3;
   }
   .sub {
     font-size: 18px;
@@ -473,7 +507,6 @@ form .flexer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 120px;
     margin-top: 12px;
     display: flex;
   }
@@ -497,6 +530,11 @@ form .flexer {
     line-height: 150%;
   }
 }
+@media screen and (max-height: 746px) {
+  .scroller {
+    justify-content: initial;
+  }
+}
 @media screen and (max-width: 380px) {
   .hint {
     margin-bottom: 24px;
@@ -510,6 +548,12 @@ form .flexer {
   }
   .input {
     min-width: 0;
+    height: 44px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .input span {
+    font-size: 14px;
   }
   .person img {
     width: 50px;
@@ -517,6 +561,9 @@ form .flexer {
   }
   .name {
     font-size: 18px;
+  }
+  .buttons {
+    margin: 16px 0;
   }
 }
 </style>
